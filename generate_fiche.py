@@ -143,15 +143,18 @@ def page1(c, ctx):
         "tes 8 emplacements détaillés, et surtout tes 24 directions précises — "
         "celles qui rendent l'information vraiment utilisable au quotidien.<br/><br/>"
         "Prends le temps de la lire tranquillement. Le feng shui ne se survole pas, "
-        "il se laisse infuser.<br/><br/>"
-        "<font name='SerifItalic'>Aurélie.</font>"
+        "il se laisse infuser."
     )
     style = ParagraphStyle("Accueil", fontName="Serif", fontSize=10.5, leading=15.5,
                            textColor=F.TEXT_DARK, alignment=TA_LEFT)
     para = Paragraph(accueil, style)
-    frame_bottom = 85; frame_top = title_y - 85
-    para.wrap(W - 160, frame_top - frame_bottom)
-    para.drawOn(c, 80, frame_bottom)
+    text_top = title_y - 80
+    _, ah = para.wrap(W - 170, 1000)
+    para.drawOn(c, 85, text_top - ah)
+    # Signature alignée à droite, comme un courrier
+    c.setFont("SerifItalic", 12)
+    c.setFillColor(F.TEXT_DARK)
+    c.drawRightString(W - 85, text_top - ah - 26, "Aurélie")
 
     c.setStrokeColor(F.CORAL); c.setLineWidth(0.8); c.line(W/2 - 18, 65, W/2 + 18, 65)
     c.setFillColor(F.TEXT_MUTED); c.setFont("Sans", 7.5)
@@ -235,7 +238,7 @@ def page2(c, ctx):
 # ============================================================
 def _page_emplacements(c, ctx, page_no, favorable):
     _bg(c); _header(c, ctx, page_no)
-    title_y = H - 105
+    title_y = H - 96
     if favorable:
         _title(c, title_y, "Tes 4 emplacements favorables", "Les secteurs où l'énergie te soutient")
         intro = ("Ces quatre emplacements portent un Qi favorable pour toi — chacun avec sa propre "
@@ -254,46 +257,57 @@ def _page_emplacements(c, ctx, page_no, favorable):
                  "si elles tombent sur des zones importantes, ou à fréquenter le moins possible.")
         scores = [-60, -70, -80, -90]
 
-    intro_y = title_y - 50
-    intro_style = ParagraphStyle("Intro", fontName="Serif", fontSize=9.5, leading=13.5,
+    intro_y = title_y - 48
+    intro_style = ParagraphStyle("Intro", fontName="Serif", fontSize=9, leading=12.6,
                                  textColor=F.TEXT_DARK, alignment=TA_LEFT)
     intro_para = Paragraph(intro, intro_style)
-    _, intro_h = intro_para.wrap(W - 120, 200)
+    _, intro_h = intro_para.wrap(W - 120, 400)
     intro_para.drawOn(c, 60, intro_y - intro_h)
 
-    cards_y_top = intro_y - intro_h - (18 if favorable else 12)
-    card_h = 122 if favorable else 125
-    card_gap = 7 if favorable else 6
+    # Cartes à hauteur DYNAMIQUE : elles s'adaptent au texte -> plus de débordement.
+    cards_y_top = intro_y - intro_h - 14
     card_x = 60; card_w = W - 120
-    desc_style = ParagraphStyle("Desc", fontName="Serif", fontSize=9, leading=12.5,
+    card_gap = 7
+    bw = 62                       # médaillon (direction + score)
+    content_left = 12 + bw + 16
+    header_zone = 48              # hauteur réservée nom + surnom + filet
+    pad_bottom = 13
+    desc_style = ParagraphStyle("Desc", fontName="Serif", fontSize=8.4, leading=11.5,
                                 textColor=F.TEXT_DARK, alignment=TA_LEFT)
+    cw = card_w - content_left - 20   # largeur texte avec marge droite confortable
 
-    for i, score in enumerate(scores):
+    y_cursor = cards_y_top
+    for score in scores:
         qi = ctx.qi_by_score(score)
         direction = ctx.empl_dir(score)
         badge_col = F.SAGE_DARK if favorable else F.score_color(score)
-        y = cards_y_top - i * (card_h + card_gap) - card_h
-        c.setFillColor(F.CARD_BG); c.roundRect(card_x, y, card_w, card_h, 6, fill=1, stroke=0)
 
-        bw = 72; bx = card_x + 12; by = y + (card_h - bw)/2
-        c.setFillColor(badge_col); c.roundRect(bx, by, bw, bw, 6, fill=1, stroke=0)
-        c.setFillColor(F.CREAM); c.setFont("SerifBold", 22)
-        c.drawCentredString(bx + bw/2, by + bw/2 + 2, direction)
-        c.setFont("Sans", 9); c.drawCentredString(bx + bw/2, by + 12, signe(score))
-
-        cx = bx + bw + 16; cw = card_w - (cx - card_x) - 16
-        c.setFillColor(F.TEXT_DARK); c.setFont("SerifBold", 14)
-        nom = qi["nom"]; c.drawString(cx, y + card_h - 22, nom)
-        nom_w = c.stringWidth(nom, "SerifBold", 14)
-        ci, ciw, cih = F.cjk_image(qi["caractere"], 26, color=F.color_rgba(F.SAGE_DARK))
-        ch = 13; cw2 = ciw * (ch / cih)
-        c.drawImage(ci, cx + nom_w + 8, y + card_h - 24, width=cw2, height=ch, mask='auto')
-        c.setFont("SerifItalic", 10.5); c.setFillColor(F.TEXT_MUTED)
-        c.drawString(cx, y + card_h - 39, qi["surnom"])
-        c.setStrokeColor(F.CORAL); c.setLineWidth(0.5); c.line(cx, y + card_h - 47, cx + 25, y + card_h - 47)
         desc = Paragraph(F.to_rl_markup(qi["description"]), desc_style)
-        _, dh = desc.wrap(cw, 200)
-        desc.drawOn(c, cx, (y + card_h - 55) - dh)
+        _, dh = desc.wrap(cw, 1000)
+        card_h = max(header_zone + dh + pad_bottom, bw + 24)
+        y = y_cursor - card_h
+
+        c.setFillColor(F.CARD_BG); c.roundRect(card_x, y, card_w, card_h, 8, fill=1, stroke=0)
+
+        bx = card_x + 12; by = y + (card_h - bw) / 2
+        c.setFillColor(badge_col); c.roundRect(bx, by, bw, bw, 7, fill=1, stroke=0)
+        c.setFillColor(F.CREAM); c.setFont("SerifBold", 20)
+        c.drawCentredString(bx + bw/2, by + bw/2 + 1, direction)
+        c.setFont("Sans", 8.5); c.drawCentredString(bx + bw/2, by + 11, signe(score))
+
+        cx = card_x + content_left
+        c.setFillColor(F.TEXT_DARK); c.setFont("SerifBold", 13.5)
+        nom = qi["nom"]; c.drawString(cx, y + card_h - 20, nom)
+        nom_w = c.stringWidth(nom, "SerifBold", 13.5)
+        ci, ciw, cih = F.cjk_image(qi["caractere"], 26, color=F.color_rgba(F.SAGE_DARK))
+        chh = 13; cw2 = ciw * (chh / cih)
+        c.drawImage(ci, cx + nom_w + 8, y + card_h - 22, width=cw2, height=chh, mask='auto')
+        c.setFont("SerifItalic", 10); c.setFillColor(F.TEXT_MUTED)
+        c.drawString(cx, y + card_h - 36, qi["surnom"])
+        c.setStrokeColor(F.CORAL); c.setLineWidth(0.5); c.line(cx, y + card_h - 44, cx + 25, y + card_h - 44)
+        desc.drawOn(c, cx, (y + card_h - header_zone) - dh)
+
+        y_cursor = y - card_gap
 
     _footer(c, ctx)
     c.showPage()
