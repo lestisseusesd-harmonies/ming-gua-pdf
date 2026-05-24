@@ -407,12 +407,12 @@ def _page_directions(c, ctx, page_no, favorable):
     intro_style = ParagraphStyle("Intro", fontName="Serif", fontSize=intro_fs, leading=intro_lead,
                                  textColor=F.TEXT_DARK, alignment=TA_LEFT)
     intro_para = Paragraph(intro, intro_style)
-    _, intro_h = intro_para.wrap(W - 130, 1000)
+    _, intro_h = intro_para.wrap(W - 144, 1000)
     intro_y_top = title_y - 50
     box_pad = 10; box_h = intro_h + 2*box_pad; box_y = intro_y_top - box_h
     c.setFillColor(F.CARD_BG); c.roundRect(60, box_y, W - 120, box_h, 6, fill=1, stroke=0)
     c.setFillColor(F.CORAL); c.rect(60, box_y, 3, box_h, fill=1, stroke=0)
-    intro_para.drawOn(c, 70, box_y + box_pad)
+    intro_para.drawOn(c, 72, box_y + box_pad)
 
     current_y = box_y - 16; block_x = 60; block_w = W - 120; block_gap = 5
     for qi_key in ordre:
@@ -455,11 +455,11 @@ def page7(c, ctx):
     intro_style = ParagraphStyle("Intro", fontName="Serif", fontSize=9.2, leading=12.8,
                                  textColor=F.TEXT_DARK, alignment=TA_LEFT)
     intro_para = Paragraph(intro, intro_style)
-    _, intro_h = intro_para.wrap(W - 130, 1000)
+    _, intro_h = intro_para.wrap(W - 144, 1000)
     intro_y_top = title_y - 50; box_pad = 10; box_h = intro_h + 2*box_pad; box_y = intro_y_top - box_h
     c.setFillColor(F.CARD_BG); c.roundRect(60, box_y, W - 120, box_h, 6, fill=1, stroke=0)
     c.setFillColor(F.CORAL); c.rect(60, box_y, 3, box_h, fill=1, stroke=0)
-    intro_para.drawOn(c, 70, box_y + box_pad)
+    intro_para.drawOn(c, 72, box_y + box_pad)
 
     table_y = box_y - 20; col_w = (W - 120 - 10)/2
     lx = 60; rx = lx + col_w + 10; header_h = 30
@@ -552,7 +552,7 @@ def page7(c, ctx):
     mnemo_style = ParagraphStyle("Mnemo", fontName="Serif", fontSize=10, leading=14,
                                  textColor=F.TEXT_DARK, alignment=TA_CENTER)
     mnemo_para = Paragraph(mnemo, mnemo_style)
-    _, mnemo_h = mnemo_para.wrap(W - 130, 1000)
+    _, mnemo_h = mnemo_para.wrap(W - 144, 1000)
     box_pad = 10; box_h = mnemo_h + 2*box_pad; box_y = mnemo_y - box_h
     c.setFillColor(F.CARD_BG); c.roundRect(60, box_y, W - 120, box_h, 6, fill=1, stroke=0)
     c.setFillColor(F.CORAL); c.rect(60, box_y, 3, box_h, fill=1, stroke=0)
@@ -632,7 +632,7 @@ def page8(c, ctx):
     chapeau_style = ParagraphStyle("Chapeau", fontName="Serif", fontSize=9.2, leading=13,
                                    textColor=F.TEXT_DARK, alignment=TA_LEFT)
     chapeau_para = Paragraph(chapeau, chapeau_style)
-    _, chapeau_h = chapeau_para.wrap(W - 130, 1000)
+    _, chapeau_h = chapeau_para.wrap(W - 144, 1000)
     chapeau_y_top = title_y - 30; box_pad = 10; box_h = chapeau_h + 2*box_pad; box_y = chapeau_y_top - box_h
     c.setFillColor(F.CARD_BG); c.roundRect(60, box_y, W - 120, box_h, 6, fill=1, stroke=0)
     c.setFillColor(F.SAGE_70); c.rect(60, box_y, 3, box_h, fill=1, stroke=0)
