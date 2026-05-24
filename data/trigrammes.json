@@ -1,0 +1,67 @@
+{
+  "_doc": "Contenu de la page 2 (Le trigramme). 'attributs' = repris des fiches de cours d'Aurélie. 'tendances' = texte narratif au mot près ; SEUL KAN est fourni. Les 6 autres doivent être rédigés par Aurélie (sa voix). Markup reportlab autorisé : <b>, <font name='SerifItalic'>, <i>, <br/>.",
+  "1": {
+    "image": "L'eau",
+    "attribut": "Le Mystérieux, l'insondable",
+    "element": "Eau",
+    "couleurs": "Noir, bleu",
+    "relation": "Fils cadet ou fils du milieu — jeune homme (15-30 ans)",
+    "tendances": "<b>KAN</b> porte l'énergie de l'eau qui descend, qui s'infiltre, qui finit toujours par trouver son chemin. Cette tendance se traduit souvent par un goût marqué pour le savoir, pour la reconnaissance, par une intelligence vive — tu connais sans doute cette manière de creuser, de chercher en profondeur.<br/><br/>Côté zones de vigilance, l'eau de KAN apporte aussi une inclinaison à l'inquiétude (parfois inutile), une capacité à beaucoup travailler — peut-être trop. Une attirance pour la prise de risque, et un désir intense de gain, d'accomplissement, qui peut devenir un moteur formidable ou un piège, selon comment tu l'habites.<br/><br/><font name='SerifItalic'>Ces tendances ne sont pas un destin. Ce sont des lignes de force avec lesquelles tu composes. Tu les connais déjà sans doute. Cette fiche te permet juste de mettre des mots dessus.</font>"
+  },
+  "2": {
+    "image": "La Terre",
+    "attribut": "Le réceptif",
+    "element": "Terre",
+    "couleurs": "Marron, jaune",
+    "relation": "Mère ou femme à partir de 45 ans",
+    "tendances": ""
+  },
+  "3": {
+    "image": "Le Tonnerre",
+    "attribut": "L'éveilleur",
+    "element": "Bois",
+    "couleurs": "Vert",
+    "relation": "Fils aîné ou homme adulte de 30 à 45 ans",
+    "tendances": ""
+  },
+  "4": {
+    "image": "Le Vent",
+    "attribut": "Le Doux",
+    "element": "Bois",
+    "couleurs": "Vert, bleu clair",
+    "relation": "Fille aînée ou femme de 30 à 45 ans",
+    "tendances": ""
+  },
+  "6": {
+    "image": "Le Ciel",
+    "attribut": "Le créateur",
+    "element": "Métal",
+    "couleurs": "Or, argent, blanc",
+    "relation": "Père, époux — homme à partir de 45 ans",
+    "tendances": ""
+  },
+  "7": {
+    "image": "Le Lac, le Marais",
+    "attribut": "Le Joyeux",
+    "element": "Métal",
+    "couleurs": "Or, argent, blanc",
+    "relation": "Fille benjamine, fille de moins de 15 ans",
+    "tendances": ""
+  },
+  "8": {
+    "image": "La Montagne",
+    "attribut": "L'immobile",
+    "element": "Terre",
+    "couleurs": "Marron, jaune",
+    "relation": "Plus jeune fils, garçon de moins de 15 ans",
+    "tendances": ""
+  },
+  "9": {
+    "image": "Le Feu",
+    "attribut": "Qui s'attache",
+    "element": "Feu",
+    "couleurs": "Rouge, orange",
+    "relation": "Fille cadette ou fille du milieu, femme de 15 à 30 ans",
+    "tendances": ""
+  }
+}

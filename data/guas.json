@@ -1,0 +1,1882 @@
+{
+  "1": {
+    "numero": 1,
+    "nom": "KAN",
+    "caractere": "坎",
+    "element": "Eau",
+    "groupe": "Est",
+    "emplacements": {
+      "N": {
+        "qi": "FU WEI",
+        "score": 60
+      },
+      "NE": {
+        "qi": "WU GUI",
+        "score": -70
+      },
+      "E": {
+        "qi": "TIAN YI",
+        "score": 80
+      },
+      "SE": {
+        "qi": "SHENG QI",
+        "score": 90
+      },
+      "S": {
+        "qi": "YAN NIAN",
+        "score": 70
+      },
+      "SO": {
+        "qi": "JUE MING",
+        "score": -90
+      },
+      "O": {
+        "qi": "HUO HAI",
+        "score": -60
+      },
+      "NO": {
+        "qi": "LIU SHA",
+        "score": -80
+      }
+    },
+    "directions24": [
+      {
+        "label": "N1",
+        "montagne": "REN",
+        "caractere": "壬",
+        "degres": "337,5° – 352,5°",
+        "qi": "YAN NIAN",
+        "score": 70
+      },
+      {
+        "label": "N2",
+        "montagne": "ZI",
+        "caractere": "子",
+        "degres": "352,5° – 7,5°",
+        "qi": "FU WEI",
+        "score": 60
+      },
+      {
+        "label": "N3",
+        "montagne": "GUI",
+        "caractere": "癸",
+        "degres": "7,5° – 22,5°",
+        "qi": "FU WEI",
+        "score": 60
+      },
+      {
+        "label": "NE1",
+        "montagne": "CHOU",
+        "caractere": "丑",
+        "degres": "22,5° – 37,5°",
+        "qi": "HUO HAI",
+        "score": -60
+      },
+      {
+        "label": "NE2",
+        "montagne": "GEN",
+        "caractere": "艮",
+        "degres": "37,5° – 52,5°",
+        "qi": "WU GUI",
+        "score": -70
+      },
+      {
+        "label": "NE3",
+        "montagne": "YIN",
+        "caractere": "寅",
+        "degres": "52,5° – 67,5°",
+        "qi": "YAN NIAN",
+        "score": 70
+      },
+      {
+        "label": "E1",
+        "montagne": "JIA",
+        "caractere": "甲",
+        "degres": "67,5° – 82,5°",
+        "qi": "LIU SHA",
+        "score": -80
+      },
+      {
+        "label": "E2",
+        "montagne": "MAO",
+        "caractere": "卯",
+        "degres": "82,5° – 97,5°",
+        "qi": "TIAN YI",
+        "score": 80
+      },
+      {
+        "label": "E3",
+        "montagne": "YI",
+        "caractere": "乙",
+        "degres": "97,5° – 112,5°",
+        "qi": "JUE MING",
+        "score": -90
+      },
+      {
+        "label": "SE1",
+        "montagne": "CHEN",
+        "caractere": "辰",
+        "degres": "112,5° – 127,5°",
+        "qi": "FU WEI",
+        "score": 60
+      },
+      {
+        "label": "SE2",
+        "montagne": "XUN",
+        "caractere": "巽",
+        "degres": "127,5° – 142,5°",
+        "qi": "SHENG QI",
+        "score": 90
+      },
+      {
+        "label": "SE3",
+        "montagne": "SI",
+        "caractere": "巳",
+        "degres": "142,5° – 157,5°",
+        "qi": "HUO HAI",
+        "score": -60
+      },
+      {
+        "label": "S1",
+        "montagne": "BING",
+        "caractere": "丙",
+        "degres": "157,5° – 172,5°",
+        "qi": "WU GUI",
+        "score": -70
+      },
+      {
+        "label": "S2",
+        "montagne": "WU",
+        "caractere": "午",
+        "degres": "172,5° – 187,5°",
+        "qi": "YAN NIAN",
+        "score": 70
+      },
+      {
+        "label": "S3",
+        "montagne": "DING",
+        "caractere": "丁",
+        "degres": "187,5° – 202,5°",
+        "qi": "HUO HAI",
+        "score": -60
+      },
+      {
+        "label": "SO1",
+        "montagne": "WEI",
+        "caractere": "未",
+        "degres": "202,5° – 217,5°",
+        "qi": "TIAN YI",
+        "score": 80
+      },
+      {
+        "label": "SO2",
+        "montagne": "KUN",
+        "caractere": "坤",
+        "degres": "217,5° – 232,5°",
+        "qi": "JUE MING",
+        "score": -90
+      },
+      {
+        "label": "SO3",
+        "montagne": "SHEN",
+        "caractere": "申",
+        "degres": "232,5° – 247,5°",
+        "qi": "FU WEI",
+        "score": 60
+      },
+      {
+        "label": "O1",
+        "montagne": "GENG",
+        "caractere": "庚",
+        "degres": "247,5° – 262,5°",
+        "qi": "TIAN YI",
+        "score": 80
+      },
+      {
+        "label": "O2",
+        "montagne": "YOU",
+        "caractere": "酉",
+        "degres": "262,5° – 277,5°",
+        "qi": "HUO HAI",
+        "score": -60
+      },
+      {
+        "label": "O3",
+        "montagne": "XIN",
+        "caractere": "辛",
+        "degres": "277,5° – 292,5°",
+        "qi": "SHENG QI",
+        "score": 90
+      },
+      {
+        "label": "NO1",
+        "montagne": "XU",
+        "caractere": "戌",
+        "degres": "292,5° – 307,5°",
+        "qi": "YAN NIAN",
+        "score": 70
+      },
+      {
+        "label": "NO2",
+        "montagne": "QIAN",
+        "caractere": "乾",
+        "degres": "307,5° – 322,5°",
+        "qi": "LIU SHA",
+        "score": -80
+      },
+      {
+        "label": "NO3",
+        "montagne": "HAI",
+        "caractere": "亥",
+        "degres": "322,5° – 337,5°",
+        "qi": "TIAN YI",
+        "score": 80
+      }
+    ]
+  },
+  "4": {
+    "numero": 4,
+    "nom": "XUN",
+    "caractere": "巽",
+    "element": "Bois",
+    "groupe": "Est",
+    "emplacements": {
+      "N": {
+        "qi": "SHENG QI",
+        "score": 90
+      },
+      "NE": {
+        "qi": "JUE MING",
+        "score": -90
+      },
+      "E": {
+        "qi": "YAN NIAN",
+        "score": 70
+      },
+      "SE": {
+        "qi": "FU WEI",
+        "score": 60
+      },
+      "S": {
+        "qi": "TIAN YI",
+        "score": 80
+      },
+      "SO": {
+        "qi": "WU GUI",
+        "score": -70
+      },
+      "O": {
+        "qi": "LIU SHA",
+        "score": -80
+      },
+      "NO": {
+        "qi": "HUO HAI",
+        "score": -60
+      }
+    },
+    "directions24": [
+      {
+        "label": "N1",
+        "montagne": "REN",
+        "caractere": "壬",
+        "degres": "337,5° – 352,5°",
+        "qi": "TIAN YI",
+        "score": 80
+      },
+      {
+        "label": "N2",
+        "montagne": "ZI",
+        "caractere": "子",
+        "degres": "352,5° – 7,5°",
+        "qi": "SHENG QI",
+        "score": 90
+      },
+      {
+        "label": "N3",
+        "montagne": "GUI",
+        "caractere": "癸",
+        "degres": "7,5° – 22,5°",
+        "qi": "SHENG QI",
+        "score": 90
+      },
+      {
+        "label": "NE1",
+        "montagne": "CHOU",
+        "caractere": "丑",
+        "degres": "22,5° – 37,5°",
+        "qi": "LIU SHA",
+        "score": -80
+      },
+      {
+        "label": "NE2",
+        "montagne": "GEN",
+        "caractere": "艮",
+        "degres": "37,5° – 52,5°",
+        "qi": "JUE MING",
+        "score": -90
+      },
+      {
+        "label": "NE3",
+        "montagne": "YIN",
+        "caractere": "寅",
+        "degres": "52,5° – 67,5°",
+        "qi": "TIAN YI",
+        "score": 80
+      },
+      {
+        "label": "E1",
+        "montagne": "JIA",
+        "caractere": "甲",
+        "degres": "67,5° – 82,5°",
+        "qi": "HUO HAI",
+        "score": -60
+      },
+      {
+        "label": "E2",
+        "montagne": "MAO",
+        "caractere": "卯",
+        "degres": "82,5° – 97,5°",
+        "qi": "YAN NIAN",
+        "score": 70
+      },
+      {
+        "label": "E3",
+        "montagne": "YI",
+        "caractere": "乙",
+        "degres": "97,5° – 112,5°",
+        "qi": "WU GUI",
+        "score": -70
+      },
+      {
+        "label": "SE1",
+        "montagne": "CHEN",
+        "caractere": "辰",
+        "degres": "112,5° – 127,5°",
+        "qi": "SHENG QI",
+        "score": 90
+      },
+      {
+        "label": "SE2",
+        "montagne": "XUN",
+        "caractere": "巽",
+        "degres": "127,5° – 142,5°",
+        "qi": "FU WEI",
+        "score": 60
+      },
+      {
+        "label": "SE3",
+        "montagne": "SI",
+        "caractere": "巳",
+        "degres": "142,5° – 157,5°",
+        "qi": "LIU SHA",
+        "score": -80
+      },
+      {
+        "label": "S1",
+        "montagne": "BING",
+        "caractere": "丙",
+        "degres": "157,5° – 172,5°",
+        "qi": "JUE MING",
+        "score": -90
+      },
+      {
+        "label": "S2",
+        "montagne": "WU",
+        "caractere": "午",
+        "degres": "172,5° – 187,5°",
+        "qi": "TIAN YI",
+        "score": 80
+      },
+      {
+        "label": "S3",
+        "montagne": "DING",
+        "caractere": "丁",
+        "degres": "187,5° – 202,5°",
+        "qi": "LIU SHA",
+        "score": -80
+      },
+      {
+        "label": "SO1",
+        "montagne": "WEI",
+        "caractere": "未",
+        "degres": "202,5° – 217,5°",
+        "qi": "YAN NIAN",
+        "score": 70
+      },
+      {
+        "label": "SO2",
+        "montagne": "KUN",
+        "caractere": "坤",
+        "degres": "217,5° – 232,5°",
+        "qi": "WU GUI",
+        "score": -70
+      },
+      {
+        "label": "SO3",
+        "montagne": "SHEN",
+        "caractere": "申",
+        "degres": "232,5° – 247,5°",
+        "qi": "SHENG QI",
+        "score": 90
+      },
+      {
+        "label": "O1",
+        "montagne": "GENG",
+        "caractere": "庚",
+        "degres": "247,5° – 262,5°",
+        "qi": "YAN NIAN",
+        "score": 70
+      },
+      {
+        "label": "O2",
+        "montagne": "YOU",
+        "caractere": "酉",
+        "degres": "262,5° – 277,5°",
+        "qi": "LIU SHA",
+        "score": -80
+      },
+      {
+        "label": "O3",
+        "montagne": "XIN",
+        "caractere": "辛",
+        "degres": "277,5° – 292,5°",
+        "qi": "FU WEI",
+        "score": 60
+      },
+      {
+        "label": "NO1",
+        "montagne": "XU",
+        "caractere": "戌",
+        "degres": "292,5° – 307,5°",
+        "qi": "TIAN YI",
+        "score": 80
+      },
+      {
+        "label": "NO2",
+        "montagne": "QIAN",
+        "caractere": "乾",
+        "degres": "307,5° – 322,5°",
+        "qi": "HUO HAI",
+        "score": -60
+      },
+      {
+        "label": "NO3",
+        "montagne": "HAI",
+        "caractere": "亥",
+        "degres": "322,5° – 337,5°",
+        "qi": "YAN NIAN",
+        "score": 70
+      }
+    ]
+  },
+  "3": {
+    "numero": 3,
+    "nom": "ZHEN",
+    "caractere": "震",
+    "element": "Bois",
+    "groupe": "Est",
+    "emplacements": {
+      "N": {
+        "qi": "TIAN YI",
+        "score": 80
+      },
+      "NE": {
+        "qi": "LIU SHA",
+        "score": -80
+      },
+      "E": {
+        "qi": "FU WEI",
+        "score": 60
+      },
+      "SE": {
+        "qi": "YAN NIAN",
+        "score": 70
+      },
+      "S": {
+        "qi": "SHENG QI",
+        "score": 90
+      },
+      "SO": {
+        "qi": "HUO HAI",
+        "score": -60
+      },
+      "O": {
+        "qi": "JUE MING",
+        "score": -90
+      },
+      "NO": {
+        "qi": "WU GUI",
+        "score": -70
+      }
+    },
+    "directions24": [
+      {
+        "label": "N1",
+        "montagne": "REN",
+        "caractere": "壬",
+        "degres": "337,5° – 352,5°",
+        "qi": "SHENG QI",
+        "score": 90
+      },
+      {
+        "label": "N2",
+        "montagne": "ZI",
+        "caractere": "子",
+        "degres": "352,5° – 7,5°",
+        "qi": "TIAN YI",
+        "score": 80
+      },
+      {
+        "label": "N3",
+        "montagne": "GUI",
+        "caractere": "癸",
+        "degres": "7,5° – 22,5°",
+        "qi": "TIAN YI",
+        "score": 80
+      },
+      {
+        "label": "NE1",
+        "montagne": "CHOU",
+        "caractere": "丑",
+        "degres": "22,5° – 37,5°",
+        "qi": "JUE MING",
+        "score": -90
+      },
+      {
+        "label": "NE2",
+        "montagne": "GEN",
+        "caractere": "艮",
+        "degres": "37,5° – 52,5°",
+        "qi": "LIU SHA",
+        "score": -80
+      },
+      {
+        "label": "NE3",
+        "montagne": "YIN",
+        "caractere": "寅",
+        "degres": "52,5° – 67,5°",
+        "qi": "SHENG QI",
+        "score": 90
+      },
+      {
+        "label": "E1",
+        "montagne": "JIA",
+        "caractere": "甲",
+        "degres": "67,5° – 82,5°",
+        "qi": "WU GUI",
+        "score": -70
+      },
+      {
+        "label": "E2",
+        "montagne": "MAO",
+        "caractere": "卯",
+        "degres": "82,5° – 97,5°",
+        "qi": "FU WEI",
+        "score": 60
+      },
+      {
+        "label": "E3",
+        "montagne": "YI",
+        "caractere": "乙",
+        "degres": "97,5° – 112,5°",
+        "qi": "HUO HAI",
+        "score": -60
+      },
+      {
+        "label": "SE1",
+        "montagne": "CHEN",
+        "caractere": "辰",
+        "degres": "112,5° – 127,5°",
+        "qi": "TIAN YI",
+        "score": 80
+      },
+      {
+        "label": "SE2",
+        "montagne": "XUN",
+        "caractere": "巽",
+        "degres": "127,5° – 142,5°",
+        "qi": "YAN NIAN",
+        "score": 70
+      },
+      {
+        "label": "SE3",
+        "montagne": "SI",
+        "caractere": "巳",
+        "degres": "142,5° – 157,5°",
+        "qi": "JUE MING",
+        "score": -90
+      },
+      {
+        "label": "S1",
+        "montagne": "BING",
+        "caractere": "丙",
+        "degres": "157,5° – 172,5°",
+        "qi": "LIU SHA",
+        "score": -80
+      },
+      {
+        "label": "S2",
+        "montagne": "WU",
+        "caractere": "午",
+        "degres": "172,5° – 187,5°",
+        "qi": "SHENG QI",
+        "score": 90
+      },
+      {
+        "label": "S3",
+        "montagne": "DING",
+        "caractere": "丁",
+        "degres": "187,5° – 202,5°",
+        "qi": "JUE MING",
+        "score": -90
+      },
+      {
+        "label": "SO1",
+        "montagne": "WEI",
+        "caractere": "未",
+        "degres": "202,5° – 217,5°",
+        "qi": "FU WEI",
+        "score": 60
+      },
+      {
+        "label": "SO2",
+        "montagne": "KUN",
+        "caractere": "坤",
+        "degres": "217,5° – 232,5°",
+        "qi": "HUO HAI",
+        "score": -60
+      },
+      {
+        "label": "SO3",
+        "montagne": "SHEN",
+        "caractere": "申",
+        "degres": "232,5° – 247,5°",
+        "qi": "TIAN YI",
+        "score": 80
+      },
+      {
+        "label": "O1",
+        "montagne": "GENG",
+        "caractere": "庚",
+        "degres": "247,5° – 262,5°",
+        "qi": "FU WEI",
+        "score": 60
+      },
+      {
+        "label": "O2",
+        "montagne": "YOU",
+        "caractere": "酉",
+        "degres": "262,5° – 277,5°",
+        "qi": "JUE MING",
+        "score": -90
+      },
+      {
+        "label": "O3",
+        "montagne": "XIN",
+        "caractere": "辛",
+        "degres": "277,5° – 292,5°",
+        "qi": "YAN NIAN",
+        "score": 70
+      },
+      {
+        "label": "NO1",
+        "montagne": "XU",
+        "caractere": "戌",
+        "degres": "292,5° – 307,5°",
+        "qi": "SHENG QI",
+        "score": 90
+      },
+      {
+        "label": "NO2",
+        "montagne": "QIAN",
+        "caractere": "乾",
+        "degres": "307,5° – 322,5°",
+        "qi": "WU GUI",
+        "score": -70
+      },
+      {
+        "label": "NO3",
+        "montagne": "HAI",
+        "caractere": "亥",
+        "degres": "322,5° – 337,5°",
+        "qi": "FU WEI",
+        "score": 60
+      }
+    ]
+  },
+  "9": {
+    "numero": 9,
+    "nom": "LI",
+    "caractere": "離",
+    "element": "Feu",
+    "groupe": "Est",
+    "emplacements": {
+      "N": {
+        "qi": "YAN NIAN",
+        "score": 70
+      },
+      "NE": {
+        "qi": "HUO HAI",
+        "score": -60
+      },
+      "E": {
+        "qi": "SHENG QI",
+        "score": 90
+      },
+      "SE": {
+        "qi": "TIAN YI",
+        "score": 80
+      },
+      "S": {
+        "qi": "FU WEI",
+        "score": 60
+      },
+      "SO": {
+        "qi": "LIU SHA",
+        "score": -80
+      },
+      "O": {
+        "qi": "WU GUI",
+        "score": -70
+      },
+      "NO": {
+        "qi": "JUE MING",
+        "score": -90
+      }
+    },
+    "directions24": [
+      {
+        "label": "N1",
+        "montagne": "REN",
+        "caractere": "壬",
+        "degres": "337,5° – 352,5°",
+        "qi": "FU WEI",
+        "score": 60
+      },
+      {
+        "label": "N2",
+        "montagne": "ZI",
+        "caractere": "子",
+        "degres": "352,5° – 7,5°",
+        "qi": "YAN NIAN",
+        "score": 70
+      },
+      {
+        "label": "N3",
+        "montagne": "GUI",
+        "caractere": "癸",
+        "degres": "7,5° – 22,5°",
+        "qi": "YAN NIAN",
+        "score": 70
+      },
+      {
+        "label": "NE1",
+        "montagne": "CHOU",
+        "caractere": "丑",
+        "degres": "22,5° – 37,5°",
+        "qi": "WU GUI",
+        "score": -70
+      },
+      {
+        "label": "NE2",
+        "montagne": "GEN",
+        "caractere": "艮",
+        "degres": "37,5° – 52,5°",
+        "qi": "HUO HAI",
+        "score": -60
+      },
+      {
+        "label": "NE3",
+        "montagne": "YIN",
+        "caractere": "寅",
+        "degres": "52,5° – 67,5°",
+        "qi": "FU WEI",
+        "score": 60
+      },
+      {
+        "label": "E1",
+        "montagne": "JIA",
+        "caractere": "甲",
+        "degres": "67,5° – 82,5°",
+        "qi": "JUE MING",
+        "score": -90
+      },
+      {
+        "label": "E2",
+        "montagne": "MAO",
+        "caractere": "卯",
+        "degres": "82,5° – 97,5°",
+        "qi": "SHENG QI",
+        "score": 90
+      },
+      {
+        "label": "E3",
+        "montagne": "YI",
+        "caractere": "乙",
+        "degres": "97,5° – 112,5°",
+        "qi": "LIU SHA",
+        "score": -80
+      },
+      {
+        "label": "SE1",
+        "montagne": "CHEN",
+        "caractere": "辰",
+        "degres": "112,5° – 127,5°",
+        "qi": "YAN NIAN",
+        "score": 70
+      },
+      {
+        "label": "SE2",
+        "montagne": "XUN",
+        "caractere": "巽",
+        "degres": "127,5° – 142,5°",
+        "qi": "TIAN YI",
+        "score": 80
+      },
+      {
+        "label": "SE3",
+        "montagne": "SI",
+        "caractere": "巳",
+        "degres": "142,5° – 157,5°",
+        "qi": "WU GUI",
+        "score": -70
+      },
+      {
+        "label": "S1",
+        "montagne": "BING",
+        "caractere": "丙",
+        "degres": "157,5° – 172,5°",
+        "qi": "HUO HAI",
+        "score": -60
+      },
+      {
+        "label": "S2",
+        "montagne": "WU",
+        "caractere": "午",
+        "degres": "172,5° – 187,5°",
+        "qi": "FU WEI",
+        "score": 60
+      },
+      {
+        "label": "S3",
+        "montagne": "DING",
+        "caractere": "丁",
+        "degres": "187,5° – 202,5°",
+        "qi": "WU GUI",
+        "score": -70
+      },
+      {
+        "label": "SO1",
+        "montagne": "WEI",
+        "caractere": "未",
+        "degres": "202,5° – 217,5°",
+        "qi": "SHENG QI",
+        "score": 90
+      },
+      {
+        "label": "SO2",
+        "montagne": "KUN",
+        "caractere": "坤",
+        "degres": "217,5° – 232,5°",
+        "qi": "LIU SHA",
+        "score": -80
+      },
+      {
+        "label": "SO3",
+        "montagne": "SHEN",
+        "caractere": "申",
+        "degres": "232,5° – 247,5°",
+        "qi": "YAN NIAN",
+        "score": 70
+      },
+      {
+        "label": "O1",
+        "montagne": "GENG",
+        "caractere": "庚",
+        "degres": "247,5° – 262,5°",
+        "qi": "SHENG QI",
+        "score": 90
+      },
+      {
+        "label": "O2",
+        "montagne": "YOU",
+        "caractere": "酉",
+        "degres": "262,5° – 277,5°",
+        "qi": "WU GUI",
+        "score": -70
+      },
+      {
+        "label": "O3",
+        "montagne": "XIN",
+        "caractere": "辛",
+        "degres": "277,5° – 292,5°",
+        "qi": "TIAN YI",
+        "score": 80
+      },
+      {
+        "label": "NO1",
+        "montagne": "XU",
+        "caractere": "戌",
+        "degres": "292,5° – 307,5°",
+        "qi": "FU WEI",
+        "score": 60
+      },
+      {
+        "label": "NO2",
+        "montagne": "QIAN",
+        "caractere": "乾",
+        "degres": "307,5° – 322,5°",
+        "qi": "JUE MING",
+        "score": -90
+      },
+      {
+        "label": "NO3",
+        "montagne": "HAI",
+        "caractere": "亥",
+        "degres": "322,5° – 337,5°",
+        "qi": "SHENG QI",
+        "score": 90
+      }
+    ]
+  },
+  "6": {
+    "numero": 6,
+    "nom": "QIAN",
+    "caractere": "乾",
+    "element": "Métal",
+    "groupe": "Ouest",
+    "emplacements": {
+      "N": {
+        "qi": "LIU SHA",
+        "score": -80
+      },
+      "NE": {
+        "qi": "TIAN YI",
+        "score": 80
+      },
+      "E": {
+        "qi": "WU GUI",
+        "score": -70
+      },
+      "SE": {
+        "qi": "HUO HAI",
+        "score": -60
+      },
+      "S": {
+        "qi": "JUE MING",
+        "score": -90
+      },
+      "SO": {
+        "qi": "YAN NIAN",
+        "score": 70
+      },
+      "O": {
+        "qi": "SHENG QI",
+        "score": 90
+      },
+      "NO": {
+        "qi": "FU WEI",
+        "score": 60
+      }
+    },
+    "directions24": [
+      {
+        "label": "N1",
+        "montagne": "REN",
+        "caractere": "壬",
+        "degres": "337,5° – 352,5°",
+        "qi": "JUE MING",
+        "score": -90
+      },
+      {
+        "label": "N2",
+        "montagne": "ZI",
+        "caractere": "子",
+        "degres": "352,5° – 7,5°",
+        "qi": "LIU SHA",
+        "score": -80
+      },
+      {
+        "label": "N3",
+        "montagne": "GUI",
+        "caractere": "癸",
+        "degres": "7,5° – 22,5°",
+        "qi": "LIU SHA",
+        "score": -80
+      },
+      {
+        "label": "NE1",
+        "montagne": "CHOU",
+        "caractere": "丑",
+        "degres": "22,5° – 37,5°",
+        "qi": "SHENG QI",
+        "score": 90
+      },
+      {
+        "label": "NE2",
+        "montagne": "GEN",
+        "caractere": "艮",
+        "degres": "37,5° – 52,5°",
+        "qi": "TIAN YI",
+        "score": 80
+      },
+      {
+        "label": "NE3",
+        "montagne": "YIN",
+        "caractere": "寅",
+        "degres": "52,5° – 67,5°",
+        "qi": "JUE MING",
+        "score": -90
+      },
+      {
+        "label": "E1",
+        "montagne": "JIA",
+        "caractere": "甲",
+        "degres": "67,5° – 82,5°",
+        "qi": "FU WEI",
+        "score": 60
+      },
+      {
+        "label": "E2",
+        "montagne": "MAO",
+        "caractere": "卯",
+        "degres": "82,5° – 97,5°",
+        "qi": "WU GUI",
+        "score": -70
+      },
+      {
+        "label": "E3",
+        "montagne": "YI",
+        "caractere": "乙",
+        "degres": "97,5° – 112,5°",
+        "qi": "YAN NIAN",
+        "score": 70
+      },
+      {
+        "label": "SE1",
+        "montagne": "CHEN",
+        "caractere": "辰",
+        "degres": "112,5° – 127,5°",
+        "qi": "LIU SHA",
+        "score": -80
+      },
+      {
+        "label": "SE2",
+        "montagne": "XUN",
+        "caractere": "巽",
+        "degres": "127,5° – 142,5°",
+        "qi": "HUO HAI",
+        "score": -60
+      },
+      {
+        "label": "SE3",
+        "montagne": "SI",
+        "caractere": "巳",
+        "degres": "142,5° – 157,5°",
+        "qi": "SHENG QI",
+        "score": 90
+      },
+      {
+        "label": "S1",
+        "montagne": "BING",
+        "caractere": "丙",
+        "degres": "157,5° – 172,5°",
+        "qi": "TIAN YI",
+        "score": 80
+      },
+      {
+        "label": "S2",
+        "montagne": "WU",
+        "caractere": "午",
+        "degres": "172,5° – 187,5°",
+        "qi": "JUE MING",
+        "score": -90
+      },
+      {
+        "label": "S3",
+        "montagne": "DING",
+        "caractere": "丁",
+        "degres": "187,5° – 202,5°",
+        "qi": "SHENG QI",
+        "score": 90
+      },
+      {
+        "label": "SO1",
+        "montagne": "WEI",
+        "caractere": "未",
+        "degres": "202,5° – 217,5°",
+        "qi": "WU GUI",
+        "score": -70
+      },
+      {
+        "label": "SO2",
+        "montagne": "KUN",
+        "caractere": "坤",
+        "degres": "217,5° – 232,5°",
+        "qi": "YAN NIAN",
+        "score": 70
+      },
+      {
+        "label": "SO3",
+        "montagne": "SHEN",
+        "caractere": "申",
+        "degres": "232,5° – 247,5°",
+        "qi": "LIU SHA",
+        "score": -80
+      },
+      {
+        "label": "O1",
+        "montagne": "GENG",
+        "caractere": "庚",
+        "degres": "247,5° – 262,5°",
+        "qi": "WU GUI",
+        "score": -70
+      },
+      {
+        "label": "O2",
+        "montagne": "YOU",
+        "caractere": "酉",
+        "degres": "262,5° – 277,5°",
+        "qi": "SHENG QI",
+        "score": 90
+      },
+      {
+        "label": "O3",
+        "montagne": "XIN",
+        "caractere": "辛",
+        "degres": "277,5° – 292,5°",
+        "qi": "HUO HAI",
+        "score": -60
+      },
+      {
+        "label": "NO1",
+        "montagne": "XU",
+        "caractere": "戌",
+        "degres": "292,5° – 307,5°",
+        "qi": "JUE MING",
+        "score": -90
+      },
+      {
+        "label": "NO2",
+        "montagne": "QIAN",
+        "caractere": "乾",
+        "degres": "307,5° – 322,5°",
+        "qi": "FU WEI",
+        "score": 60
+      },
+      {
+        "label": "NO3",
+        "montagne": "HAI",
+        "caractere": "亥",
+        "degres": "322,5° – 337,5°",
+        "qi": "WU GUI",
+        "score": -70
+      }
+    ]
+  },
+  "2": {
+    "numero": 2,
+    "nom": "KUN",
+    "caractere": "坤",
+    "element": "Terre",
+    "groupe": "Ouest",
+    "emplacements": {
+      "N": {
+        "qi": "JUE MING",
+        "score": -90
+      },
+      "NE": {
+        "qi": "SHENG QI",
+        "score": 90
+      },
+      "E": {
+        "qi": "HUO HAI",
+        "score": -60
+      },
+      "SE": {
+        "qi": "WU GUI",
+        "score": -70
+      },
+      "S": {
+        "qi": "LIU SHA",
+        "score": -80
+      },
+      "SO": {
+        "qi": "FU WEI",
+        "score": 60
+      },
+      "O": {
+        "qi": "TIAN YI",
+        "score": 80
+      },
+      "NO": {
+        "qi": "YAN NIAN",
+        "score": 70
+      }
+    },
+    "directions24": [
+      {
+        "label": "N1",
+        "montagne": "REN",
+        "caractere": "壬",
+        "degres": "337,5° – 352,5°",
+        "qi": "LIU SHA",
+        "score": -80
+      },
+      {
+        "label": "N2",
+        "montagne": "ZI",
+        "caractere": "子",
+        "degres": "352,5° – 7,5°",
+        "qi": "JUE MING",
+        "score": -90
+      },
+      {
+        "label": "N3",
+        "montagne": "GUI",
+        "caractere": "癸",
+        "degres": "7,5° – 22,5°",
+        "qi": "JUE MING",
+        "score": -90
+      },
+      {
+        "label": "NE1",
+        "montagne": "CHOU",
+        "caractere": "丑",
+        "degres": "22,5° – 37,5°",
+        "qi": "TIAN YI",
+        "score": 80
+      },
+      {
+        "label": "NE2",
+        "montagne": "GEN",
+        "caractere": "艮",
+        "degres": "37,5° – 52,5°",
+        "qi": "SHENG QI",
+        "score": 90
+      },
+      {
+        "label": "NE3",
+        "montagne": "YIN",
+        "caractere": "寅",
+        "degres": "52,5° – 67,5°",
+        "qi": "LIU SHA",
+        "score": -80
+      },
+      {
+        "label": "E1",
+        "montagne": "JIA",
+        "caractere": "甲",
+        "degres": "67,5° – 82,5°",
+        "qi": "YAN NIAN",
+        "score": 70
+      },
+      {
+        "label": "E2",
+        "montagne": "MAO",
+        "caractere": "卯",
+        "degres": "82,5° – 97,5°",
+        "qi": "HUO HAI",
+        "score": -60
+      },
+      {
+        "label": "E3",
+        "montagne": "YI",
+        "caractere": "乙",
+        "degres": "97,5° – 112,5°",
+        "qi": "FU WEI",
+        "score": 60
+      },
+      {
+        "label": "SE1",
+        "montagne": "CHEN",
+        "caractere": "辰",
+        "degres": "112,5° – 127,5°",
+        "qi": "JUE MING",
+        "score": -90
+      },
+      {
+        "label": "SE2",
+        "montagne": "XUN",
+        "caractere": "巽",
+        "degres": "127,5° – 142,5°",
+        "qi": "WU GUI",
+        "score": -70
+      },
+      {
+        "label": "SE3",
+        "montagne": "SI",
+        "caractere": "巳",
+        "degres": "142,5° – 157,5°",
+        "qi": "TIAN YI",
+        "score": 80
+      },
+      {
+        "label": "S1",
+        "montagne": "BING",
+        "caractere": "丙",
+        "degres": "157,5° – 172,5°",
+        "qi": "SHENG QI",
+        "score": 90
+      },
+      {
+        "label": "S2",
+        "montagne": "WU",
+        "caractere": "午",
+        "degres": "172,5° – 187,5°",
+        "qi": "LIU SHA",
+        "score": -80
+      },
+      {
+        "label": "S3",
+        "montagne": "DING",
+        "caractere": "丁",
+        "degres": "187,5° – 202,5°",
+        "qi": "TIAN YI",
+        "score": 80
+      },
+      {
+        "label": "SO1",
+        "montagne": "WEI",
+        "caractere": "未",
+        "degres": "202,5° – 217,5°",
+        "qi": "HUO HAI",
+        "score": -60
+      },
+      {
+        "label": "SO2",
+        "montagne": "KUN",
+        "caractere": "坤",
+        "degres": "217,5° – 232,5°",
+        "qi": "FU WEI",
+        "score": 60
+      },
+      {
+        "label": "SO3",
+        "montagne": "SHEN",
+        "caractere": "申",
+        "degres": "232,5° – 247,5°",
+        "qi": "JUE MING",
+        "score": -90
+      },
+      {
+        "label": "O1",
+        "montagne": "GENG",
+        "caractere": "庚",
+        "degres": "247,5° – 262,5°",
+        "qi": "HUO HAI",
+        "score": -60
+      },
+      {
+        "label": "O2",
+        "montagne": "YOU",
+        "caractere": "酉",
+        "degres": "262,5° – 277,5°",
+        "qi": "TIAN YI",
+        "score": 80
+      },
+      {
+        "label": "O3",
+        "montagne": "XIN",
+        "caractere": "辛",
+        "degres": "277,5° – 292,5°",
+        "qi": "WU GUI",
+        "score": -70
+      },
+      {
+        "label": "NO1",
+        "montagne": "XU",
+        "caractere": "戌",
+        "degres": "292,5° – 307,5°",
+        "qi": "LIU SHA",
+        "score": -80
+      },
+      {
+        "label": "NO2",
+        "montagne": "QIAN",
+        "caractere": "乾",
+        "degres": "307,5° – 322,5°",
+        "qi": "YAN NIAN",
+        "score": 70
+      },
+      {
+        "label": "NO3",
+        "montagne": "HAI",
+        "caractere": "亥",
+        "degres": "322,5° – 337,5°",
+        "qi": "HUO HAI",
+        "score": -60
+      }
+    ]
+  },
+  "7": {
+    "numero": 7,
+    "nom": "DUI",
+    "caractere": "兌",
+    "element": "Métal",
+    "groupe": "Ouest",
+    "emplacements": {
+      "N": {
+        "qi": "HUO HAI",
+        "score": -60
+      },
+      "NE": {
+        "qi": "YAN NIAN",
+        "score": 70
+      },
+      "E": {
+        "qi": "JUE MING",
+        "score": -90
+      },
+      "SE": {
+        "qi": "LIU SHA",
+        "score": -80
+      },
+      "S": {
+        "qi": "WU GUI",
+        "score": -70
+      },
+      "SO": {
+        "qi": "TIAN YI",
+        "score": 80
+      },
+      "O": {
+        "qi": "FU WEI",
+        "score": 60
+      },
+      "NO": {
+        "qi": "SHENG QI",
+        "score": 90
+      }
+    },
+    "directions24": [
+      {
+        "label": "N1",
+        "montagne": "REN",
+        "caractere": "壬",
+        "degres": "337,5° – 352,5°",
+        "qi": "WU GUI",
+        "score": -70
+      },
+      {
+        "label": "N2",
+        "montagne": "ZI",
+        "caractere": "子",
+        "degres": "352,5° – 7,5°",
+        "qi": "HUO HAI",
+        "score": -60
+      },
+      {
+        "label": "N3",
+        "montagne": "GUI",
+        "caractere": "癸",
+        "degres": "7,5° – 22,5°",
+        "qi": "HUO HAI",
+        "score": -60
+      },
+      {
+        "label": "NE1",
+        "montagne": "CHOU",
+        "caractere": "丑",
+        "degres": "22,5° – 37,5°",
+        "qi": "FU WEI",
+        "score": 60
+      },
+      {
+        "label": "NE2",
+        "montagne": "GEN",
+        "caractere": "艮",
+        "degres": "37,5° – 52,5°",
+        "qi": "YAN NIAN",
+        "score": 70
+      },
+      {
+        "label": "NE3",
+        "montagne": "YIN",
+        "caractere": "寅",
+        "degres": "52,5° – 67,5°",
+        "qi": "WU GUI",
+        "score": -70
+      },
+      {
+        "label": "E1",
+        "montagne": "JIA",
+        "caractere": "甲",
+        "degres": "67,5° – 82,5°",
+        "qi": "SHENG QI",
+        "score": 90
+      },
+      {
+        "label": "E2",
+        "montagne": "MAO",
+        "caractere": "卯",
+        "degres": "82,5° – 97,5°",
+        "qi": "JUE MING",
+        "score": -90
+      },
+      {
+        "label": "E3",
+        "montagne": "YI",
+        "caractere": "乙",
+        "degres": "97,5° – 112,5°",
+        "qi": "TIAN YI",
+        "score": 80
+      },
+      {
+        "label": "SE1",
+        "montagne": "CHEN",
+        "caractere": "辰",
+        "degres": "112,5° – 127,5°",
+        "qi": "HUO HAI",
+        "score": -60
+      },
+      {
+        "label": "SE2",
+        "montagne": "XUN",
+        "caractere": "巽",
+        "degres": "127,5° – 142,5°",
+        "qi": "LIU SHA",
+        "score": -80
+      },
+      {
+        "label": "SE3",
+        "montagne": "SI",
+        "caractere": "巳",
+        "degres": "142,5° – 157,5°",
+        "qi": "FU WEI",
+        "score": 60
+      },
+      {
+        "label": "S1",
+        "montagne": "BING",
+        "caractere": "丙",
+        "degres": "157,5° – 172,5°",
+        "qi": "YAN NIAN",
+        "score": 70
+      },
+      {
+        "label": "S2",
+        "montagne": "WU",
+        "caractere": "午",
+        "degres": "172,5° – 187,5°",
+        "qi": "WU GUI",
+        "score": -70
+      },
+      {
+        "label": "S3",
+        "montagne": "DING",
+        "caractere": "丁",
+        "degres": "187,5° – 202,5°",
+        "qi": "FU WEI",
+        "score": 60
+      },
+      {
+        "label": "SO1",
+        "montagne": "WEI",
+        "caractere": "未",
+        "degres": "202,5° – 217,5°",
+        "qi": "JUE MING",
+        "score": -90
+      },
+      {
+        "label": "SO2",
+        "montagne": "KUN",
+        "caractere": "坤",
+        "degres": "217,5° – 232,5°",
+        "qi": "TIAN YI",
+        "score": 80
+      },
+      {
+        "label": "SO3",
+        "montagne": "SHEN",
+        "caractere": "申",
+        "degres": "232,5° – 247,5°",
+        "qi": "HUO HAI",
+        "score": -60
+      },
+      {
+        "label": "O1",
+        "montagne": "GENG",
+        "caractere": "庚",
+        "degres": "247,5° – 262,5°",
+        "qi": "JUE MING",
+        "score": -90
+      },
+      {
+        "label": "O2",
+        "montagne": "YOU",
+        "caractere": "酉",
+        "degres": "262,5° – 277,5°",
+        "qi": "FU WEI",
+        "score": 60
+      },
+      {
+        "label": "O3",
+        "montagne": "XIN",
+        "caractere": "辛",
+        "degres": "277,5° – 292,5°",
+        "qi": "LIU SHA",
+        "score": -80
+      },
+      {
+        "label": "NO1",
+        "montagne": "XU",
+        "caractere": "戌",
+        "degres": "292,5° – 307,5°",
+        "qi": "WU GUI",
+        "score": -70
+      },
+      {
+        "label": "NO2",
+        "montagne": "QIAN",
+        "caractere": "乾",
+        "degres": "307,5° – 322,5°",
+        "qi": "SHENG QI",
+        "score": 90
+      },
+      {
+        "label": "NO3",
+        "montagne": "HAI",
+        "caractere": "亥",
+        "degres": "322,5° – 337,5°",
+        "qi": "JUE MING",
+        "score": -90
+      }
+    ]
+  },
+  "8": {
+    "numero": 8,
+    "nom": "GEN",
+    "caractere": "艮",
+    "element": "Terre",
+    "groupe": "Ouest",
+    "emplacements": {
+      "N": {
+        "qi": "WU GUI",
+        "score": -70
+      },
+      "NE": {
+        "qi": "FU WEI",
+        "score": 60
+      },
+      "E": {
+        "qi": "LIU SHA",
+        "score": -80
+      },
+      "SE": {
+        "qi": "JUE MING",
+        "score": -90
+      },
+      "S": {
+        "qi": "HUO HAI",
+        "score": -60
+      },
+      "SO": {
+        "qi": "SHENG QI",
+        "score": 90
+      },
+      "O": {
+        "qi": "YAN NIAN",
+        "score": 70
+      },
+      "NO": {
+        "qi": "TIAN YI",
+        "score": 80
+      }
+    },
+    "directions24": [
+      {
+        "label": "N1",
+        "montagne": "REN",
+        "caractere": "壬",
+        "degres": "337,5° – 352,5°",
+        "qi": "HUO HAI",
+        "score": -60
+      },
+      {
+        "label": "N2",
+        "montagne": "ZI",
+        "caractere": "子",
+        "degres": "352,5° – 7,5°",
+        "qi": "WU GUI",
+        "score": -70
+      },
+      {
+        "label": "N3",
+        "montagne": "GUI",
+        "caractere": "癸",
+        "degres": "7,5° – 22,5°",
+        "qi": "WU GUI",
+        "score": -70
+      },
+      {
+        "label": "NE1",
+        "montagne": "CHOU",
+        "caractere": "丑",
+        "degres": "22,5° – 37,5°",
+        "qi": "YAN NIAN",
+        "score": 70
+      },
+      {
+        "label": "NE2",
+        "montagne": "GEN",
+        "caractere": "艮",
+        "degres": "37,5° – 52,5°",
+        "qi": "FU WEI",
+        "score": 60
+      },
+      {
+        "label": "NE3",
+        "montagne": "YIN",
+        "caractere": "寅",
+        "degres": "52,5° – 67,5°",
+        "qi": "HUO HAI",
+        "score": -60
+      },
+      {
+        "label": "E1",
+        "montagne": "JIA",
+        "caractere": "甲",
+        "degres": "67,5° – 82,5°",
+        "qi": "TIAN YI",
+        "score": 80
+      },
+      {
+        "label": "E2",
+        "montagne": "MAO",
+        "caractere": "卯",
+        "degres": "82,5° – 97,5°",
+        "qi": "LIU SHA",
+        "score": -80
+      },
+      {
+        "label": "E3",
+        "montagne": "YI",
+        "caractere": "乙",
+        "degres": "97,5° – 112,5°",
+        "qi": "SHENG QI",
+        "score": 90
+      },
+      {
+        "label": "SE1",
+        "montagne": "CHEN",
+        "caractere": "辰",
+        "degres": "112,5° – 127,5°",
+        "qi": "WU GUI",
+        "score": -70
+      },
+      {
+        "label": "SE2",
+        "montagne": "XUN",
+        "caractere": "巽",
+        "degres": "127,5° – 142,5°",
+        "qi": "JUE MING",
+        "score": -90
+      },
+      {
+        "label": "SE3",
+        "montagne": "SI",
+        "caractere": "巳",
+        "degres": "142,5° – 157,5°",
+        "qi": "YAN NIAN",
+        "score": 70
+      },
+      {
+        "label": "S1",
+        "montagne": "BING",
+        "caractere": "丙",
+        "degres": "157,5° – 172,5°",
+        "qi": "FU WEI",
+        "score": 60
+      },
+      {
+        "label": "S2",
+        "montagne": "WU",
+        "caractere": "午",
+        "degres": "172,5° – 187,5°",
+        "qi": "HUO HAI",
+        "score": -60
+      },
+      {
+        "label": "S3",
+        "montagne": "DING",
+        "caractere": "丁",
+        "degres": "187,5° – 202,5°",
+        "qi": "YAN NIAN",
+        "score": 70
+      },
+      {
+        "label": "SO1",
+        "montagne": "WEI",
+        "caractere": "未",
+        "degres": "202,5° – 217,5°",
+        "qi": "LIU SHA",
+        "score": -80
+      },
+      {
+        "label": "SO2",
+        "montagne": "KUN",
+        "caractere": "坤",
+        "degres": "217,5° – 232,5°",
+        "qi": "SHENG QI",
+        "score": 90
+      },
+      {
+        "label": "SO3",
+        "montagne": "SHEN",
+        "caractere": "申",
+        "degres": "232,5° – 247,5°",
+        "qi": "WU GUI",
+        "score": -70
+      },
+      {
+        "label": "O1",
+        "montagne": "GENG",
+        "caractere": "庚",
+        "degres": "247,5° – 262,5°",
+        "qi": "LIU SHA",
+        "score": -80
+      },
+      {
+        "label": "O2",
+        "montagne": "YOU",
+        "caractere": "酉",
+        "degres": "262,5° – 277,5°",
+        "qi": "YAN NIAN",
+        "score": 70
+      },
+      {
+        "label": "O3",
+        "montagne": "XIN",
+        "caractere": "辛",
+        "degres": "277,5° – 292,5°",
+        "qi": "JUE MING",
+        "score": -90
+      },
+      {
+        "label": "NO1",
+        "montagne": "XU",
+        "caractere": "戌",
+        "degres": "292,5° – 307,5°",
+        "qi": "HUO HAI",
+        "score": -60
+      },
+      {
+        "label": "NO2",
+        "montagne": "QIAN",
+        "caractere": "乾",
+        "degres": "307,5° – 322,5°",
+        "qi": "TIAN YI",
+        "score": 80
+      },
+      {
+        "label": "NO3",
+        "montagne": "HAI",
+        "caractere": "亥",
+        "degres": "322,5° – 337,5°",
+        "qi": "LIU SHA",
+        "score": -80
+      }
+    ]
+  }
+}
