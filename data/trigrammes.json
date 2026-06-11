@@ -1,28 +1,28 @@
 {
-  "_doc": "Contenu de la page 2 (Le trigramme). 'attributs' = repris des fiches de cours d'Aurélie. 'tendances' = texte narratif au mot près ; SEUL KAN est fourni. Les 6 autres doivent être rédigés par Aurélie (sa voix). Markup reportlab autorisé : <b>, <font name='SerifItalic'>, <i>, <br/>.",
+  "_doc": "Contenu écran 2 + page 2 du PDF. 'profil' = textes validés par Aurélie (brief 11 juin 2026), à reprendre au mot près. 'attribut' = nom du profil (canon du brief). Aucun tiret long autorisé.",
   "1": {
-    "image": "L'eau",
-    "attribut": "Le Mystérieux, l'insondable",
+    "image": "L'Eau",
+    "attribut": "L'Insondable",
     "element": "Eau",
     "couleurs": "Noir, bleu",
-    "relation": "Fils cadet ou fils du milieu — jeune homme (15-30 ans)",
-    "tendances": "<b>KAN</b> porte l'énergie de l'eau qui descend, qui s'infiltre, qui finit toujours par trouver son chemin. Cette tendance se traduit souvent par un goût marqué pour le savoir, pour la reconnaissance, par une intelligence vive — tu connais sans doute cette manière de creuser, de chercher en profondeur.<br/><br/>Côté secteurs de vigilance, l'eau de KAN apporte aussi une inclinaison à l'inquiétude (parfois inutile), une capacité à beaucoup travailler — peut-être trop. Une attirance pour la prise de risque, et un désir intense de gain, d'accomplissement, qui peut devenir un moteur formidable ou un piège, selon comment tu l'habites.<br/><br/><font name='SerifItalic'>Ces tendances ne sont pas un destin. Ce sont des lignes de force avec lesquelles tu composes. Tu les connais déjà sans doute. Cette fiche te permet juste de mettre des mots dessus.</font>"
+    "relation": "Fils cadet ou fils du milieu, jeune homme (15-30 ans)",
+    "profil": "Ton trigramme évoque des personnes profondes et réfléchies, qui avancent par l'intérieur et ne se livrent pas tout de suite. Tu travailles dur et tu vois loin. Le revers, c'est une tendance à t'inquiéter plus que nécessaire. Ta maison peut devenir le refuge calme où ton mental se repose enfin."
   },
   "2": {
     "image": "La Terre",
-    "attribut": "Le réceptif",
+    "attribut": "Le Réceptif",
     "element": "Terre",
     "couleurs": "Marron, jaune",
     "relation": "Mère ou femme à partir de 45 ans",
-    "tendances": ""
+    "profil": "Ton trigramme évoque des personnes accueillantes et nourrissantes, qui prennent soin et créent du lien autour d'elles. On se sent bien près de toi. Le revers, c'est de tant donner qu'on finit par s'oublier. Ta maison peut devenir l'endroit qui prend soin de toi, en retour."
   },
   "3": {
     "image": "Le Tonnerre",
-    "attribut": "L'éveilleur",
+    "attribut": "L'Éveilleur",
     "element": "Bois",
     "couleurs": "Vert",
     "relation": "Fils aîné ou homme adulte de 30 à 45 ans",
-    "tendances": ""
+    "profil": "Ton trigramme évoque des personnes pleines d'élan, qui aiment lancer, bouger, entreprendre. Tu avances vite et tu n'as pas peur d'ouvrir la voie. Le revers, c'est l'impatience, et une énergie qui a parfois besoin de se poser. Ta maison peut devenir le point d'appui d'où tu rebondis."
   },
   "4": {
     "image": "Le Vent",
@@ -30,38 +30,38 @@
     "element": "Bois",
     "couleurs": "Vert, bleu clair",
     "relation": "Fille aînée ou femme de 30 à 45 ans",
-    "tendances": ""
+    "profil": "Ton trigramme évoque des personnes sensibles et inspirées, attirées par la beauté, le savoir, les plaisirs simples. Tu te diffuses en douceur, comme le vent. Le revers, c'est parfois l'hésitation, le mal à trancher. Ta maison peut devenir le terrain stable d'où tu déploies tes élans."
   },
   "6": {
     "image": "Le Ciel",
-    "attribut": "Le créateur",
+    "attribut": "Le Créatif",
     "element": "Métal",
     "couleurs": "Or, argent, blanc",
-    "relation": "Père, époux — homme à partir de 45 ans",
-    "tendances": ""
+    "relation": "Père, époux, homme à partir de 45 ans",
+    "profil": "Ton trigramme évoque des personnes qui inspirent le respect, avec un sens naturel de la responsabilité et de la droiture. On te confie volontiers les rênes. Le revers, c'est une exigence forte, et parfois le sentiment de porter beaucoup, seule. Ta maison peut redevenir un lieu où tu déposes les armes."
   },
   "7": {
-    "image": "Le Lac, le Marais",
+    "image": "Le Lac",
     "attribut": "Le Joyeux",
     "element": "Métal",
     "couleurs": "Or, argent, blanc",
     "relation": "Fille benjamine, fille de moins de 15 ans",
-    "tendances": ""
+    "profil": "Ton trigramme évoque des personnes expressives et vivantes, qui ont besoin de légèreté et d'échanges vrais pour se sentir bien. Souvent, derrière la joie, une sensibilité plus discrète, et un vrai besoin de te ressourcer. Ta maison peut devenir l'endroit qui te recharge au lieu de te vider."
   },
   "8": {
     "image": "La Montagne",
-    "attribut": "L'immobile",
+    "attribut": "L'Immobile",
     "element": "Terre",
     "couleurs": "Marron, jaune",
     "relation": "Plus jeune fils, garçon de moins de 15 ans",
-    "tendances": ""
+    "profil": "Ton trigramme évoque des personnes stables et posées, sur qui on peut compter. Tu avances à ton rythme, avec constance, et tu apaises ceux qui t'entourent. Le revers, c'est parfois du mal à bouger quand il le faudrait. Ta maison peut devenir l'ancrage tranquille qui te ressemble."
   },
   "9": {
     "image": "Le Feu",
-    "attribut": "Qui s'attache",
+    "attribut": "Le Lumineux",
     "element": "Feu",
     "couleurs": "Rouge, orange",
     "relation": "Fille cadette ou fille du milieu, femme de 15 à 30 ans",
-    "tendances": ""
+    "profil": "Ton trigramme évoque des personnes rayonnantes et passionnées, souvent attirées par l'art et le sens. Tu éclaires les pièces où tu entres. Le revers, c'est une flamme qui peut s'emballer, ou s'épuiser vite. Ta maison peut devenir le foyer qui entretient ta lumière sans la consumer."
   }
 }

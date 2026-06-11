@@ -13,21 +13,20 @@ from PIL import Image, ImageDraw, ImageFont
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 
-# ---------- Palette (charte Claude Design / Noriane Mesli — source unique) ----------
-# Crème #F2EBE0 · Sauge #8BBAB4 · Olive foncé #4B4D3C · Corail #E5614A · Texte #2A2926
-BEIGE_BG   = HexColor("#F2EBE0")   # crème (fond)
-CARD_BG    = HexColor("#FAF6EF")   # carte = crème éclairci
-CREAM      = HexColor("#F2EBE0")
-SAGE_DARK  = HexColor("#4B4D3C")   # olive foncé
-SAGE_LIGHT = HexColor("#8BBAB4")   # vert sauge
-# Échelle d'intensité des Qi favorables : du plus dense (olive) au plus léger (sauge)
-SAGE_90    = HexColor("#4B4D3C")   # olive foncé
-SAGE_80    = HexColor("#5F6E5F")   # mélange olive→sauge
-SAGE_70    = HexColor("#74948B")   # mélange olive→sauge
-SAGE_60    = HexColor("#8BBAB4")   # sauge
-CORAL      = HexColor("#E5614A")   # corail (charte)
-CORAL_DARK = HexColor("#B84A37")   # corail assombri (défavorables -80/-90)
-TEXT_DARK  = HexColor("#2A2926")
+# ---------- Palette : source unique = Podia_CSS_Personnalise.css (charte Noriane Mesli) ----------
+BEIGE_BG   = HexColor("#F2EBE0")   # --creme
+CARD_BG    = HexColor("#F5EFE4")   # --creme-carte
+CREAM      = HexColor("#F2EBE0")   # --texte-clair
+SAGE_DARK  = HexColor("#4B4D3C")   # --olive
+SAGE_LIGHT = HexColor("#8BBAB4")   # --sauge
+# Échelle d'intensité des Qi favorables (tons exacts de la charte, du plus dense au plus léger)
+SAGE_90    = HexColor("#4B4D3C")   # --olive
+SAGE_80    = HexColor("#5C5E4A")   # --olive-clair
+SAGE_70    = HexColor("#6EA49E")   # --sauge-fonce
+SAGE_60    = HexColor("#8BBAB4")   # --sauge
+CORAL      = HexColor("#E5614A")   # --corail
+CORAL_DARK = HexColor("#D04F3A")   # --corail-hover (défavorables -80/-90)
+TEXT_DARK  = HexColor("#2A2926")   # --texte-fonce
 TEXT_MUTED = HexColor("#6E6A60")   # texte atténué (dérivé du texte foncé)
 
 # ---------- Résolution de chemins multi-environnement ----------

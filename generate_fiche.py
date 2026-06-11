@@ -84,7 +84,7 @@ def _header(c, ctx, page_no, logo_small=True):
 def _footer(c, ctx, with_site_link=True):
     c.setStrokeColor(F.CORAL); c.setLineWidth(0.6); c.line(60, 60, W - 60, 60)
     c.setFillColor(F.TEXT_MUTED); c.setFont("Sans", 6.5)
-    c.drawString(60, 45, f"© Les Tisseuses d'Harmonies  —  Document personnel pour {ctx.prenom}. Merci de ne pas en recopier le contenu.")
+    c.drawString(60, 45, f"© Les Tisseuses d'Harmonies. Document personnel pour {ctx.prenom}. Merci de ne pas en recopier le contenu.")
     site = "lestisseusesdharmonies.fr"
     sw = c.stringWidth(site, "Sans", 6.5); sx = W - 60 - sw
     c.drawString(sx, 45, site)
@@ -134,7 +134,7 @@ def page1(c, ctx):
     # Titre verrouillé du lead magnet (sur deux lignes)
     title_y = card_y - 35
     c.setFillColor(F.TEXT_DARK); c.setFont("Serif", 25)
-    c.drawCentredString(W/2, title_y, "Ton énergie et ta maison —")
+    c.drawCentredString(W/2, title_y, "Ton énergie et ta maison,")
     c.drawCentredString(W/2, title_y - 28, "est-ce que ça matche ?")
     c.setStrokeColor(F.CORAL); c.setLineWidth(1.2); c.line(W/2 - 28, title_y - 40, W/2 + 28, title_y - 40)
     c.setFont("SerifItalic", 12); c.setFillColor(F.TEXT_DARK)
@@ -145,13 +145,13 @@ def page1(c, ctx):
     accueil = (
         f"<font name='SansBold'>Bonjour {ctx.prenom},</font><br/><br/>"
         "Tu tiens entre les mains quelque chose de rare : ta carte d'identité énergétique "
-        "dans l'espace. En feng shui traditionnel chinois, ça s'appelle le Ming Gua — "
+        "dans l'espace. En feng shui traditionnel chinois, ça s'appelle le Ming Gua, "
         "et c'est le socle de tout.<br/><br/>"
         "C'est lui qui détermine où ton corps trouve de l'appui dans ta maison, et où il "
-        "s'épuise. Pas une théorie — une grille de lecture millénaire, calculée à partir "
+        "s'épuise. Pas une théorie : une grille de lecture millénaire, calculée à partir "
         "de ta date de naissance.<br/><br/>"
         "Dans cette fiche, tu vas découvrir tes 8 emplacements : les 4 qui te portent et "
-        "les 4 qui travaillent contre toi. Prends le temps de la lire tranquillement. "
+        "les 4 qui t'épuisent. Prends le temps de la lire tranquillement. "
         "Le feng shui ne se survole pas, il se laisse infuser."
     )
     style = ParagraphStyle("Accueil", fontName="Sans", fontSize=10.5, leading=15.5,
@@ -168,7 +168,7 @@ def page1(c, ctx):
     c.setStrokeColor(F.CORAL); c.setLineWidth(0.8); c.line(W/2 - 18, 65, W/2 + 18, 65)
     c.setFillColor(F.TEXT_MUTED); c.setFont("Sans", 7.5)
     if ctx.naissance:
-        c.drawCentredString(W/2, 52, f"Fiche élaborée à partir de ta date de naissance — {ctx.naissance}")
+        c.drawCentredString(W/2, 52, f"Fiche élaborée à partir de ta date de naissance : {ctx.naissance}")
     c.drawCentredString(W/2, 40, ctx.edition)
     c.showPage()
 
@@ -182,16 +182,16 @@ def page2(c, ctx):
 
     note = (
         "<font name='SansBold'>Avant d'aller plus loin, un point important.</font> "
-        f"Le trigramme qui t'est associé — ici <b>{ctx.gua_nom}</b> — n'est pas une étiquette psychologique. "
+        f"Le trigramme qui t'est associé (ici <b>{ctx.gua_nom}</b>) n'est pas une étiquette psychologique. "
         "Ce n'est pas un test de personnalité qui te dit \"tu es comme ça\". "
         "C'est une clef de lecture issue de la pensée chinoise classique, "
         "riche de correspondances symboliques avec la nature, les éléments, les saisons.<br/><br/>"
-        "Concrètement, en <b>BaZhai</b> — la branche du feng shui qu'on travaille ici — "
+        "Concrètement, en <b>BaZhai</b> (la branche du feng shui qu'on travaille ici), "
         "c'est surtout ton numéro Gua qui sert : il détermine tes 8 emplacements. "
-        "Le reste — l'élément qui t'est associé, les tendances évoquées plus bas — "
+        "Le reste (l'élément qui t'est associé, le profil évoqué plus bas) "
         "vient d'un système de correspondances plus large issu du <i>Yi Jing</i>. À utiliser avec souplesse.<br/><br/>"
         "<font name='SansItalic'>Prends ce qui résonne. Laisse de côté ce qui ne te parle pas. "
-        "Tu n'es pas réductible à quelques mots — personne ne l'est. "
+        "Tu n'es pas réductible à quelques mots : personne ne l'est. "
         "Mais ces mots peuvent t'éclairer.</font>"
     )
     note_style = ParagraphStyle("Note", fontName="Sans", fontSize=9.5, leading=13.5,
@@ -223,16 +223,14 @@ def page2(c, ctx):
     cell(60 + cell_w + 10, grid_y - 2*cell_h - 8, cell_w, cell_h, "Couleurs", t["couleurs"])
     cell(60, grid_y - 3*cell_h - 16, W - 120, cell_h, "Relation familiale", t["relation"])
 
-    # Tendances
+    # Profil énergétique (textes validés par Aurélie, brief 11 juin 2026 — sans ligne d'humilité,
+    # portée par le cadre d'intro de la page)
     tend_y = grid_y - 3*cell_h - 40
     c.setFillColor(F.TEXT_DARK); c.setFont("SerifBold", 13)
-    c.drawString(60, tend_y, "Tendances énergétiques associées")
+    c.drawString(60, tend_y, f"Ton profil énergétique : {t['attribut']}")
     c.setStrokeColor(F.CORAL); c.setLineWidth(0.6); c.line(60, tend_y - 7, 235, tend_y - 7)
 
-    tend = t.get("tendances", "").strip()
-    if not tend:
-        tend = ("<font name='SansItalic' color='#7A7568'>"
-                "[Texte personnalisé pour ce trigramme à venir — rédigé par Aurélie.]</font>")
+    tend = t.get("profil", "").strip() or "[Profil à venir]"
     tend_style = ParagraphStyle("Tend", fontName="Sans", fontSize=9.5, leading=14,
                                 textColor=F.TEXT_DARK, alignment=TA_LEFT)
     tend_para = Paragraph(tend, tend_style)
@@ -250,19 +248,19 @@ def _page_emplacements(c, ctx, page_no, favorable):
     title_y = H - 96
     if favorable:
         _title(c, title_y, "Tes 4 emplacements favorables", "Les secteurs où l'énergie te soutient")
-        intro = ("Ces quatre emplacements portent un Qi favorable pour toi — chacun avec sa propre "
+        intro = ("Ces quatre emplacements portent un Qi favorable pour toi : chacun avec sa propre "
                  "couleur énergétique, son intensité, son domaine. <font name='SansBold'>Plus le score est haut, "
                  "plus l'énergie est forte et active. Plus il est bas, plus elle est douce et reposante.</font> "
                  "Aucun n'est meilleur qu'un autre : tout dépend de ce que tu cherches à nourrir dans ta vie.")
         scores = [90, 80, 70, 60]
     else:
         _title(c, title_y, "Tes 4 emplacements défavorables", "Les secteurs où l'énergie te pèse")
-        intro = ("Ces quatre emplacements portent un Qi défavorable pour toi — des intensités énergétiques "
+        intro = ("Ces quatre emplacements portent un Qi défavorable pour toi : des intensités énergétiques "
                  "mal alignées avec ton trigramme natal, qui peuvent peser quand on s'y expose longtemps. "
                  "<font name='SansBold'>Plus le score est élevé en valeur absolue (de -60 vers -90), "
-                 "plus l'énergie est puissante — il y a un vrai saut de gravité entre les deux premières "
+                 "plus l'énergie est puissante. Il y a un vrai saut de gravité entre les deux premières "
                  "et les deux dernières.</font> Le -60 reste à éviter sans inquiétude particulière. "
-                 "Les -80 et -90 sont des énergies vraiment néfastes — à éviter absolument, à transformer "
+                 "Les -80 et -90 sont des énergies vraiment néfastes : à éviter absolument, à transformer "
                  "si elles tombent sur des secteurs importants, ou à fréquenter le moins possible.")
         scores = [-60, -70, -80, -90]
 
@@ -456,8 +454,8 @@ def page_distinction(c, ctx):
     intro = (
         "Tu as maintenant vu tes 8 emplacements (pages 3-4). "
         "Avant d'aller plus loin, faisons le point sur une distinction essentielle. "
-        "<font name='SansBold'>Cette histoire d'emplacements et de directions perturbe beaucoup de gens</font> "
-        "— pour deux raisons : la plupart ne connaissent pas la distinction au départ, "
+        "<font name='SansBold'>Cette histoire d'emplacements et de directions perturbe beaucoup de gens</font>, "
+        "pour deux raisons : la plupart ne connaissent pas la distinction au départ, "
         "et même en la connaissant, on s'en emmêle facilement les pinceaux entre les deux. "
         "C'est pourtant crucial de bien comprendre les deux : ces notions sont "
         "<font name='SansBold'>complètement différentes et en même temps très complémentaires</font>."
@@ -484,9 +482,9 @@ def page_distinction(c, ctx):
 
     lignes = [
         ("C'est quoi", "Un secteur de ta maison", "Une orientation, un cap"),
-        ("Comment on le détermine", "On découpe le plan en 8 secteurs — la grille Ba Zhai",
+        ("Comment on le détermine", "On découpe le plan en 8 secteurs (la grille Ba Zhai)",
          "On mesure un degré précis d'orientation à la boussole (15° près pour les 24 montagnes)"),
-        ("À quoi ça sert", "Savoir comment <b>organiser</b> ta maison — où placer une pièce, une activité",
+        ("À quoi ça sert", "Savoir comment <b>organiser</b> ta maison : où placer une pièce, une activité",
          "Savoir comment <b>orienter</b> tes meubles (lit, bureau, cuisinière...)"),
     ]
     row_h = 44; row_y = table_y - header_h - 5
@@ -572,11 +570,11 @@ def page_distinction(c, ctx):
     final = (
         "Tu as maintenant ta carte : 8 emplacements, et une distinction essentielle entre "
         "« où tu vis » et « où tu pointes ».<br/><br/>"
-        "Mais il reste une question — peut-être la plus concrète de toutes : "
+        "Mais il reste une question, peut-être la plus concrète de toutes : "
         "<font name='SansBold'>est-ce que ton lit, ton bureau, ta porte d'entrée, ta cuisinière "
         "sont orientés vers une direction qui te porte… ou qui t'épuise ?</font><br/><br/>"
         "Parce que tu peux être dans un excellent emplacement, mais avec la tête de lit qui "
-        "pointe vers une direction à -80 — et tout le bénéfice s'efface.<br/><br/>"
+        "pointe vers une direction à -80. Et tout le bénéfice s'efface.<br/><br/>"
         "C'est exactement là que la page suivante t'emmène."
     )
     final_style = ParagraphStyle("Final", fontName="Sans", fontSize=8.8, leading=12.2,
@@ -606,12 +604,12 @@ def page_offre(c, ctx):
     texte = (
         "En ce moment, pendant que tu lis cette fiche, ton lit pointe dans une direction "
         "précise. Ton bureau aussi. Ta porte d'entrée laisse entrer l'énergie depuis un "
-        "angle précis. Ta cuisinière oriente tes repas — et ton énergie — vers un cap que "
+        "angle précis. Ta cuisinière oriente tes repas (et ton énergie) vers un cap que "
         "tu n'as probablement jamais mesuré.<br/><br/>"
         "Chacune de ces directions active l'un de tes 8 types de Qi. Et selon ton Ming Gua, "
-        "ce Qi peut être Sheng Qi (+90) — ton meilleur allié — ou Jue Ming (-90) — ton pire "
+        "ce Qi peut être Sheng Qi (+90), ton meilleur allié, ou Jue Ming (-90), ton pire "
         "frein. Souvent, c'est entre les deux. Mais la nuance change tout.<br/><br/>"
-        "Ce que tu as entre les mains aujourd'hui, c'est ta carte d'identité — le "
+        "Ce que tu as entre les mains aujourd'hui, c'est ta carte d'identité : le "
         "<font name='SansItalic'>qui tu es</font> dans l'espace. C'est le socle.<br/><br/>"
         "<font name='SansBold'>L'étape suivante, c'est la lecture de ce qui se passe chez toi "
         "<font name='SansItalic'>maintenant</font>.</font>"
@@ -624,9 +622,9 @@ def page_offre(c, ctx):
     # --- Encart Offre 1 (nom verrouillé) ---
     offre = (
         "C'est ce que fait <font name='SansBold'><font name='SansItalic'>Ce que tes directions "
-        "disent de ta maison</font></font> — ton diagnostic personnalisé : tu me donnes 5 mesures "
+        "disent de ta maison</font></font>, ton diagnostic personnalisé : tu me donnes 5 mesures "
         "à la boussole (lit, bureau, porte, cuisinière, fauteuil), et tu reçois un rapport qui te "
-        "dit, pour chaque direction, quel Qi elle active pour toi — et quoi faire avec.<br/><br/>"
+        "dit, pour chaque direction, quel Qi elle active pour toi, et quoi faire avec.<br/><br/>"
         f"Pas de jargon. Pas de grille à interpréter tout{'e' if ctx.fe else ''} seul{ctx.fe}. "
         "Une lecture faite pour toi, avec des recommandations concrètes et hiérarchisées."
     )
@@ -662,8 +660,8 @@ def page_offre(c, ctx):
         after_y = cl_top - 52
 
     invite = (
-        "En attendant, si cette fiche t'a fait voir ta maison un peu différemment — ou si elle "
-        "a soulevé une question —, <font name='SansBold'>réponds à ce mail</font>. "
+        "En attendant, si cette fiche t'a fait voir ta maison un peu différemment (ou si elle "
+        "a soulevé une question), <font name='SansBold'>réponds à ce mail</font>. "
         "Je lis tout, je réponds."
     )
     inv_p = Paragraph(invite, body_style)
@@ -850,15 +848,15 @@ def page_bio(c, ctx):
         "là où je suis aujourd'hui. Et ce qui ne marchait pas, je l'ai compris après : "
         "c'était trop superficiel, trop décoratif, trop « astuces ».<br/><br/>"
         "En 2015, à bout, j'ai croisé la route du <font name='SansBold'>feng shui "
-        "traditionnel chinois</font> — celui d'avant l'occidentalisation, celui qui lit "
+        "traditionnel chinois</font> : celui d'avant l'occidentalisation, celui qui lit "
         "la maison avec ses montagnes, ses orientations, ses énergies, ses temps. "
         "Ça a été le coup de cœur immédiat. Une cohérence enfin. Quelque chose qui se tient.<br/><br/>"
         "Je me suis formée pendant deux ans. J'ai d'abord pratiqué dans ma propre maison "
-        "— mon terrain d'expérimentation — avant d'accompagner d'autres femmes. "
+        "(mon terrain d'expérimentation) avant d'accompagner d'autres femmes. "
         "Et j'ai vu, encore et encore, le lien profond que nous entretenons avec notre "
         "habitation. Pas par magie : par lecture juste, par actions ciblées, par alignement "
         "entre ce que la maison disait et ce qu'elles traversaient.<br/><br/>"
-        "Aujourd'hui je transmets. Pas en oracle qui aurait toutes les réponses — "
+        "Aujourd'hui je transmets. Pas en oracle qui aurait toutes les réponses, mais "
         "en <font name='SansBold'>tisseuse qui aide à relier les fils</font>. "
         "Parce qu'au fond, ta maison te parle déjà. Mon métier, c'est de t'aider à l'écouter."
     )
@@ -872,7 +870,7 @@ def page_bio(c, ctx):
     carte_y_top = recit_bot - 16
     carte = (
         "<font name='SansBold' color='#7A8B6D' size='7.5'>MA FAÇON DE TRAVAILLER</font><br/><br/>"
-        "Je travaille en feng shui traditionnel chinois — sans bagua occidental, sans "
+        "Je travaille en feng shui traditionnel chinois : sans bagua occidental, sans "
         "« secteur amour », sans astuces déco. Et j'allie cette lecture à un accompagnement "
         "de la personne qui habite : <font name='SansBold'>parce que la maison ouvre des "
         "portes, mais c'est toi qui les franchis</font>."
@@ -891,11 +889,11 @@ def page_bio(c, ctx):
     c.setFillColor(F.CORAL); c.setFont("SerifItalic", 14); c.drawString(60, lien_y, "Restons en lien")
     intro_y = lien_y - 20
     c.setFillColor(F.TEXT_DARK); c.setFont("Serif", 9.5)
-    c.drawString(60, intro_y, "Pendant que je finalise le parcours dont je t'ai parlé, voici où me retrouver :")
+    c.drawString(60, intro_y, "Pendant que je prépare mes diagnostics, voici où me retrouver :")
     def puce(x, y, main, sec, url):
         c.setFillColor(F.SAGE_70); c.circle(x, y + 3, 2, fill=1, stroke=0)
         tx = x + 8; c.setFillColor(F.TEXT_DARK); c.setFont("Serif", 9.5)
-        full = f"{main} — {sec}"; c.drawString(tx, y, full)
+        full = f"{main} : {sec}"; c.drawString(tx, y, full)
         tw = c.stringWidth(full, "Serif", 9.5); c.linkURL(url, (tx - 2, y - 3, tx + tw + 2, y + 11), relative=0)
     px = 70; py = intro_y - 18; lh = 16
     puce(px, py, "YouTube", "@lestisseusesdharmonies", URL_YOUTUBE)

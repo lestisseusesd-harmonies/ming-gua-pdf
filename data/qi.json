@@ -5,7 +5,11 @@
     "score": 90,
     "polarite": "favorable",
     "surnom": "QI de croissance",
-    "motsCles": ["Réussite", "Visibilité", "Argent"],
+    "motsCles": [
+      "Réussite",
+      "Visibilité",
+      "Argent"
+    ],
     "description": "L'énergie la plus puissante et la plus active de tes quatre emplacements. Vibrante, pleine de vie, très énergétique. <strong>Sheng Qi, c'est l'énergie de la réussite, de la visibilité, de l'argent.</strong> Elle porte la prospérité, la renommée, la fortune. L'activer, c'est récolter l'autorité, le pouvoir, et la réussite professionnelle."
   },
   "TIAN YI": {
@@ -14,7 +18,10 @@
     "score": 80,
     "polarite": "favorable",
     "surnom": "Docteur du Ciel",
-    "motsCles": ["Santé", "Soutien"],
+    "motsCles": [
+      "Santé",
+      "Soutien"
+    ],
     "description": "Plus calme que Sheng Qi, <strong>Tian Yi est l'énergie de la santé et du soutien.</strong> Bonne santé, soutien dans la convalescence, et bons appuis : personnes influentes, amitiés durables et solides. Elle soutient aussi la promotion sociale et professionnelle, la richesse, l'accumulation des biens. Et porte les qualités de charisme, d'honnêteté, de loyauté, de dignité."
   },
   "YAN NIAN": {
@@ -23,8 +30,11 @@
     "score": 70,
     "polarite": "favorable",
     "surnom": "Années harmonieuses",
-    "motsCles": ["Amour", "Belles relations"],
-    "description": "<strong>L'énergie de l'amour et des belles relations</strong> — sous toutes leurs formes : romantiques, familiales, amicales, sociales, professionnelles. Yan Nian apporte l'harmonie familiale, la bonne entente du couple, la longévité et la bonne santé. C'est aussi l'énergie qu'on active pour trouver un partenaire."
+    "motsCles": [
+      "Amour",
+      "Belles relations"
+    ],
+    "description": "<strong>L'énergie de l'amour et des belles relations</strong>, sous toutes leurs formes : romantiques, familiales, amicales, sociales, professionnelles. Yan Nian apporte l'harmonie familiale, la bonne entente du couple, la longévité et la bonne santé. C'est aussi l'énergie qu'on active pour trouver un partenaire."
   },
   "FU WEI": {
     "nom": "Fu Wei",
@@ -32,7 +42,11 @@
     "score": 60,
     "polarite": "favorable",
     "surnom": "Stabilité",
-    "motsCles": ["Sérénité", "Bien-être", "Décisions claires"],
+    "motsCles": [
+      "Sérénité",
+      "Bien-être",
+      "Décisions claires"
+    ],
     "description": "L'énergie la plus douce de tes quatre emplacements. <strong>Fu Wei, c'est la sérénité, le bien-être, les décisions claires.</strong> Elle apporte la stabilité, le calme, la paix, l'harmonie générale. Elle soutient la concentration, permet de se régénérer, d'avoir l'esprit clair pour prendre les bonnes décisions. C'est aussi l'énergie qu'on active après un grand changement, pour retrouver l'équilibre."
   },
   "HUO HAI": {
@@ -41,8 +55,12 @@
     "score": -60,
     "polarite": "defavorable",
     "surnom": "Désastres mineurs",
-    "motsCles": ["Tracas", "Contretemps", "Obstacles"],
-    "description": "La plus douce des quatre énergies défavorables. <strong>Huo Hai, c'est l'énergie des tracas, des contretemps, des obstacles.</strong> Petits accidents, disputes, ennuis du quotidien, blessures sans gravité. Aussi des petits soucis financiers — amendes, dettes. Et peut rendre instable et bercer d'illusions. À éviter, sans inquiétude particulière."
+    "motsCles": [
+      "Tracas",
+      "Contretemps",
+      "Obstacles"
+    ],
+    "description": "La plus douce des quatre énergies défavorables. <strong>Huo Hai, c'est l'énergie des tracas, des contretemps, des obstacles.</strong> Petits accidents, disputes, ennuis du quotidien, blessures sans gravité. Aussi des petits soucis financiers (amendes, dettes). Et peut rendre instable et bercer d'illusions. À éviter, sans inquiétude particulière."
   },
   "WU GUI": {
     "nom": "Wu Gui",
@@ -50,7 +68,12 @@
     "score": -70,
     "polarite": "defavorable",
     "surnom": "Cinq Fantômes",
-    "motsCles": ["Affaiblissement", "Maladie", "Querelles", "Désagréments"],
+    "motsCles": [
+      "Affaiblissement",
+      "Maladie",
+      "Querelles",
+      "Désagréments"
+    ],
     "description": "D'une intensité supérieure à Huo Hai. <strong>Wu Gui, c'est l'énergie de l'affaiblissement, de la maladie, des querelles et des désagréments.</strong> Elle affaiblit le corps et l'esprit, génère des querelles, des trahisons, des désagréments relationnels. Elle peut aussi entraîner des pertes financières, des échecs professionnels, et attirer les esprits malveillants. Et porte les tempéraments émotifs, l'entêtement."
   },
   "LIU SHA": {
@@ -59,8 +82,12 @@
     "score": -80,
     "polarite": "defavorable",
     "surnom": "Six Meurtres",
-    "motsCles": ["Échecs", "Ruptures", "Pertes"],
-    "description": "Avec Liu Sha, on entre dans les énergies vraiment néfastes — à éviter, à transformer, ou à fréquenter le moins possible. <strong>Liu Sha, c'est l'énergie qui coupe des réalités — échecs, ruptures, pertes.</strong> Échecs relationnels et sentimentaux, problèmes de santé, accidents, pertes financières et juridiques. Elle porte aussi l'obstination, la colère, et peut entraîner des conduites de dépendance. Activée durablement, elle nuit à toute harmonie dans l'habitation."
+    "motsCles": [
+      "Échecs",
+      "Ruptures",
+      "Pertes"
+    ],
+    "description": "Avec Liu Sha, on entre dans les énergies vraiment néfastes : à éviter, à transformer, ou à fréquenter le moins possible. <strong>Liu Sha, c'est l'énergie qui coupe des réalités : échecs, ruptures, pertes.</strong> Échecs relationnels et sentimentaux, problèmes de santé, accidents, pertes financières et juridiques. Elle porte aussi l'obstination, la colère, et peut entraîner des conduites de dépendance. Activée durablement, elle nuit à toute harmonie dans l'habitation."
   },
   "JUE MING": {
     "nom": "Jue Ming",
@@ -68,7 +95,11 @@
     "score": -90,
     "polarite": "defavorable",
     "surnom": "Couper la destinée",
-    "motsCles": ["Arrêt brutal", "Ruptures majeures", "Désordre profond"],
-    "description": "La plus puissante des quatre énergies défavorables — à éviter à tout prix, à transformer ou à fréquenter le moins possible. <strong>Jue Ming, c'est l'énergie de l'arrêt brutal — ruptures majeures, désordre profond.</strong> Elle peut entraîner des maladies graves, accidents, procès, faillites. Elle s'accompagne aussi d'un esprit embrouillé, d'un affaiblissement constant. Associée aux ruptures profondes — séparations, isolement, désordres familiaux."
+    "motsCles": [
+      "Arrêt brutal",
+      "Ruptures majeures",
+      "Désordre profond"
+    ],
+    "description": "La plus puissante des quatre énergies défavorables : à éviter à tout prix, à transformer ou à fréquenter le moins possible. <strong>Jue Ming, c'est l'énergie de l'arrêt brutal : ruptures majeures, désordre profond.</strong> Elle peut entraîner des maladies graves, accidents, procès, faillites. Elle s'accompagne aussi d'un esprit embrouillé, d'un affaiblissement constant. Associée aux ruptures profondes (séparations, isolement, désordres familiaux)."
   }
 }
