@@ -25,6 +25,13 @@ URL_PINTEREST = "https://pin.it/3KCCZfEv0"
 URL_SITE      = "https://lestisseusesdharmonies.fr"
 URL_MAIL      = "mailto:contact@lestisseusesdharmonies.fr"
 
+# --- Offre 1 (page 6) -------------------------------------------------------
+# Au lancement : OFFRE1_DISPONIBLE = False -> affiche le placeholder.
+# Dès que l'Offre 1 est en ligne : passer à True et renseigner l'URL + le prix.
+OFFRE1_DISPONIBLE = False
+OFFRE1_URL  = ""            # ex. "https://lestisseusesdharmonies.fr/diagnostic"
+OFFRE1_PRIX = ""            # ex. "97 €"
+
 _MOIS = ["janvier","février","mars","avril","mai","juin","juillet","août",
          "septembre","octobre","novembre","décembre"]
 def _date_fr(d=None):
@@ -70,7 +77,7 @@ def _header(c, ctx, page_no, logo_small=True):
             c.drawImage(logo, 50, H - 65, width=35, height=38, mask='auto', preserveAspectRatio=True)
         except Exception: pass
     c.setFillColor(F.TEXT_MUTED); c.setFont("Sans", 7.5)
-    c.drawRightString(W - 50, H - 45, f"Page {page_no} / 9")
+    c.drawRightString(W - 50, H - 45, f"Page {page_no} / 7")
     c.setFillColor(F.SAGE_DARK); c.setFont("SerifBold", 9)
     c.drawRightString(W - 50, H - 58, f"Ming Gua {ctx.gua_num}  ·  {ctx.gua_nom}")
 
@@ -110,7 +117,7 @@ def page1(c, ctx):
     c.setFillColor(F.SAGE_DARK)
     c.roundRect(card_x, card_y, card_w, card_h, 12, fill=1, stroke=0)
 
-    c.setFillColor(F.CREAM); c.setFont("Serif", 64)
+    c.setFillColor(F.CREAM); c.setFont("Sans", 58)
     c.drawCentredString(W/2, card_top - 70, ctx.gua_num)
     img, iw, ih = F.cjk_image(ctx.gua_char, 70, color=F.color_rgba(F.CREAM))
     disp_h = 50; disp_w = iw * (disp_h / ih)
@@ -124,31 +131,33 @@ def page1(c, ctx):
     c.setFillColor(F.SAGE_LIGHT); c.roundRect(bx, by, bw, 17, 8.5, fill=1, stroke=0)
     c.setFillColor(F.CREAM); c.drawCentredString(W/2, by + 5, ctx.groupe)
 
+    # Titre verrouillé du lead magnet (sur deux lignes)
     title_y = card_y - 35
-    c.setFillColor(F.TEXT_DARK); c.setFont("Serif", 22)
-    c.drawCentredString(W/2, title_y, "Lire ton Ming Gua")
-    c.setStrokeColor(F.CORAL); c.setLineWidth(1.2); c.line(W/2 - 28, title_y - 12, W/2 + 28, title_y - 12)
-    c.setFont("SerifItalic", 11); c.setFillColor(F.TEXT_DARK)
-    c.drawCentredString(W/2, title_y - 28, "Ta carte énergétique personnelle")
-    c.drawCentredString(W/2, title_y - 44, "— le socle d'un feng shui qui te ressemble —")
+    c.setFillColor(F.TEXT_DARK); c.setFont("Serif", 25)
+    c.drawCentredString(W/2, title_y, "Ton énergie et ta maison —")
+    c.drawCentredString(W/2, title_y - 28, "est-ce que ça matche ?")
+    c.setStrokeColor(F.CORAL); c.setLineWidth(1.2); c.line(W/2 - 28, title_y - 40, W/2 + 28, title_y - 40)
+    c.setFont("SerifItalic", 12); c.setFillColor(F.TEXT_DARK)
+    c.drawCentredString(W/2, title_y - 56, "Ton profil énergétique spécial habitat")
     c.setFont("Sans", 8); c.setFillColor(F.TEXT_MUTED)
-    c.drawCentredString(W/2, title_y - 65, "8  EMPLACEMENTS   ·   24  DIRECTIONS")
+    c.drawCentredString(W/2, title_y - 76, "8  EMPLACEMENTS")
 
     accueil = (
-        f"<font name='SerifBold'>Bonjour {ctx.prenom},</font><br/><br/>"
-        "Tu viens de recevoir ton Ming Gua. C'est une donnée précieuse en feng shui traditionnel : "
-        "ton empreinte personnelle dans l'espace, ce qui détermine où ton corps trouve de l'appui "
-        "et où il s'épuise.<br/><br/>"
-        "Dans cette fiche, tu vas trouver ce qui est rarement partagé en libre accès : "
-        "tes 8 emplacements détaillés, et surtout tes 24 directions précises — "
-        "celles qui rendent l'information vraiment utilisable au quotidien.<br/><br/>"
-        "Prends le temps de la lire tranquillement. Le feng shui ne se survole pas, "
-        "il se laisse infuser."
+        f"<font name='SansBold'>Bonjour {ctx.prenom},</font><br/><br/>"
+        "Tu tiens entre les mains quelque chose de rare : ta carte d'identité énergétique "
+        "dans l'espace. En feng shui traditionnel chinois, ça s'appelle le Ming Gua — "
+        "et c'est le socle de tout.<br/><br/>"
+        "C'est lui qui détermine où ton corps trouve de l'appui dans ta maison, et où il "
+        "s'épuise. Pas une théorie — une grille de lecture millénaire, calculée à partir "
+        "de ta date de naissance.<br/><br/>"
+        "Dans cette fiche, tu vas découvrir tes 8 emplacements : les 4 qui te portent et "
+        "les 4 qui travaillent contre toi. Prends le temps de la lire tranquillement. "
+        "Le feng shui ne se survole pas, il se laisse infuser."
     )
-    style = ParagraphStyle("Accueil", fontName="Serif", fontSize=10.5, leading=15.5,
+    style = ParagraphStyle("Accueil", fontName="Sans", fontSize=10.5, leading=15.5,
                            textColor=F.TEXT_DARK, alignment=TA_LEFT)
     para = Paragraph(accueil, style)
-    text_top = title_y - 80
+    text_top = title_y - 102
     _, ah = para.wrap(W - 170, 1000)
     para.drawOn(c, 85, text_top - ah)
     # Signature alignée à droite, comme un courrier
@@ -172,20 +181,20 @@ def page2(c, ctx):
     _title(c, title_y, f"Le trigramme {ctx.gua_nom}", "Qui tu es selon le feng shui traditionnel")
 
     note = (
-        "<font name='SerifBold'>Avant d'aller plus loin, un point important.</font> "
+        "<font name='SansBold'>Avant d'aller plus loin, un point important.</font> "
         f"Le trigramme qui t'est associé — ici <b>{ctx.gua_nom}</b> — n'est pas une étiquette psychologique. "
         "Ce n'est pas un test de personnalité qui te dit \"tu es comme ça\". "
         "C'est une clef de lecture issue de la pensée chinoise classique, "
         "riche de correspondances symboliques avec la nature, les éléments, les saisons.<br/><br/>"
         "Concrètement, en <b>BaZhai</b> — la branche du feng shui qu'on travaille ici — "
-        "c'est surtout ton numéro Gua qui sert : il détermine tes emplacements et tes directions. "
+        "c'est surtout ton numéro Gua qui sert : il détermine tes 8 emplacements. "
         "Le reste — l'élément qui t'est associé, les tendances évoquées plus bas — "
         "vient d'un système de correspondances plus large issu du <i>Yi Jing</i>. À utiliser avec souplesse.<br/><br/>"
-        "<font name='SerifItalic'>Prends ce qui résonne. Laisse de côté ce qui ne te parle pas. "
+        "<font name='SansItalic'>Prends ce qui résonne. Laisse de côté ce qui ne te parle pas. "
         "Tu n'es pas réductible à quelques mots — personne ne l'est. "
         "Mais ces mots peuvent t'éclairer.</font>"
     )
-    note_style = ParagraphStyle("Note", fontName="Serif", fontSize=9.5, leading=13.5,
+    note_style = ParagraphStyle("Note", fontName="Sans", fontSize=9.5, leading=13.5,
                                 textColor=F.TEXT_DARK, alignment=TA_LEFT)
     note_para = Paragraph(note, note_style)
     _, note_h = note_para.wrap(W - 150, 1000)
@@ -222,9 +231,9 @@ def page2(c, ctx):
 
     tend = t.get("tendances", "").strip()
     if not tend:
-        tend = ("<font name='SerifItalic' color='#7A7568'>"
+        tend = ("<font name='SansItalic' color='#7A7568'>"
                 "[Texte personnalisé pour ce trigramme à venir — rédigé par Aurélie.]</font>")
-    tend_style = ParagraphStyle("Tend", fontName="Serif", fontSize=9.5, leading=14,
+    tend_style = ParagraphStyle("Tend", fontName="Sans", fontSize=9.5, leading=14,
                                 textColor=F.TEXT_DARK, alignment=TA_LEFT)
     tend_para = Paragraph(tend, tend_style)
     _, tend_h = tend_para.wrap(W - 120, 1000)
@@ -242,7 +251,7 @@ def _page_emplacements(c, ctx, page_no, favorable):
     if favorable:
         _title(c, title_y, "Tes 4 emplacements favorables", "Les secteurs où l'énergie te soutient")
         intro = ("Ces quatre emplacements portent un Qi favorable pour toi — chacun avec sa propre "
-                 "couleur énergétique, son intensité, son domaine. <font name='SerifBold'>Plus le score est haut, "
+                 "couleur énergétique, son intensité, son domaine. <font name='SansBold'>Plus le score est haut, "
                  "plus l'énergie est forte et active. Plus il est bas, plus elle est douce et reposante.</font> "
                  "Aucun n'est meilleur qu'un autre : tout dépend de ce que tu cherches à nourrir dans ta vie.")
         scores = [90, 80, 70, 60]
@@ -250,15 +259,15 @@ def _page_emplacements(c, ctx, page_no, favorable):
         _title(c, title_y, "Tes 4 emplacements défavorables", "Les secteurs où l'énergie te pèse")
         intro = ("Ces quatre emplacements portent un Qi défavorable pour toi — des intensités énergétiques "
                  "mal alignées avec ton trigramme natal, qui peuvent peser quand on s'y expose longtemps. "
-                 "<font name='SerifBold'>Plus le score est élevé en valeur absolue (de -60 vers -90), "
+                 "<font name='SansBold'>Plus le score est élevé en valeur absolue (de -60 vers -90), "
                  "plus l'énergie est puissante — il y a un vrai saut de gravité entre les deux premières "
                  "et les deux dernières.</font> Le -60 reste à éviter sans inquiétude particulière. "
                  "Les -80 et -90 sont des énergies vraiment néfastes — à éviter absolument, à transformer "
-                 "si elles tombent sur des zones importantes, ou à fréquenter le moins possible.")
+                 "si elles tombent sur des secteurs importants, ou à fréquenter le moins possible.")
         scores = [-60, -70, -80, -90]
 
     intro_y = title_y - 48
-    intro_style = ParagraphStyle("Intro", fontName="Serif", fontSize=9, leading=12.6,
+    intro_style = ParagraphStyle("Intro", fontName="Sans", fontSize=9, leading=12.6,
                                  textColor=F.TEXT_DARK, alignment=TA_LEFT)
     intro_para = Paragraph(intro, intro_style)
     _, intro_h = intro_para.wrap(W - 120, 400)
@@ -272,7 +281,7 @@ def _page_emplacements(c, ctx, page_no, favorable):
     content_left = 12 + bw + 16
     header_zone = 48              # hauteur réservée nom + surnom + filet
     pad_bottom = 13
-    desc_style = ParagraphStyle("Desc", fontName="Serif", fontSize=8.4, leading=11.5,
+    desc_style = ParagraphStyle("Desc", fontName="Sans", fontSize=8.4, leading=11.5,
                                 textColor=F.TEXT_DARK, alignment=TA_LEFT)
     cw = card_w - content_left - 20   # largeur texte avec marge droite confortable
 
@@ -369,23 +378,23 @@ def _page_directions(c, ctx, page_no, favorable):
             "et probablement la plus précieuse — de cette fiche.<br/><br/>"
             "Le feng shui qu'on rencontre couramment dans les magazines et les blogs "
             "propose souvent des recettes du type « mets ta cuisine au Sud-Est, ta chambre au Nord ». "
-            "<font name='SerifBold'>Ces recettes sont fausses</font> : elles viennent d'un bagua "
+            "<font name='SansBold'>Ces recettes sont fausses</font> : elles viennent d'un bagua "
             "occidental qui n'a rien à voir avec le feng shui traditionnel — où c'est ton Ming Gua "
-            "qui détermine <font name='SerifBold'>tes</font> emplacements favorables, pas une grille universelle.<br/><br/>"
+            "qui détermine <font name='SansBold'>tes</font> emplacements favorables, pas une grille universelle.<br/><br/>"
             "Et même avec les emplacements bien travaillés, il reste une dimension qu'il ne faut "
-            "surtout pas oublier : <font name='SerifBold'>les directions</font>. "
+            "surtout pas oublier : <font name='SansBold'>les directions</font>. "
             "Très puissantes, bien combinées aux emplacements, elles deviennent essentielles. "
             "Un exemple parlant : un lit posé dans un excellent emplacement, mais dont la tête est "
             "orientée vers une mauvaise direction — et tout le travail fait en amont est gâché.<br/><br/>"
             "Le système traditionnel chinois découpe chacune des 8 directions cardinales et "
             "intercardinales en 3 sous-directions de 15° chacune, formant la roue des 24 montagnes. "
             "Chaque sous-direction porte une énergie qui lui est propre, qui interagit différemment "
-            "avec ton Ming Gua. <font name='SerifBold'>Cette précision change tout : "
+            "avec ton Ming Gua. <font name='SansBold'>Cette précision change tout : "
             "pour un même Ming Gua, deux sous-directions voisines peuvent porter des énergies opposées.</font><br/><br/>"
             "Concrètement : se dire « orienté vers le Sud », ça ne veut rien dire pour un consultant "
             "traditionnel. Le S1, le S2 et le S3 peuvent porter des énergies très différentes pour la "
             "même personne. C'est la lecture fine que seule une boussole précise "
-            "(le <font name='SerifItalic'>Luo Pan</font>, dans la tradition) permet vraiment d'exploiter "
+            "(le <font name='SansItalic'>Luo Pan</font>, dans la tradition) permet vraiment d'exploiter "
             "— et que tu trouves ici, calculée spécifiquement pour ton Ming Gua."
         )
         intro_fs, intro_lead = 8.5, 11.8
@@ -394,17 +403,17 @@ def _page_directions(c, ctx, page_no, favorable):
         _title(c, title_y, f"Tes {n} directions défavorables", "Les sous-directions de 15° à éviter")
         intro = (
             "Même principe que les directions favorables : "
-            "<font name='SerifBold'>plus le score est élevé en valeur absolue (de -60 vers -90), "
+            "<font name='SansBold'>plus le score est élevé en valeur absolue (de -60 vers -90), "
             "plus l'énergie est puissante.</font> "
             "Le -60 reste à éviter sans inquiétude particulière. "
             "Les -80 et -90 sont des énergies vraiment néfastes — "
-            "à éviter absolument, à transformer si elles tombent sur des zones importantes, "
+            "à éviter absolument, à transformer si elles tombent sur des secteurs importants, "
             "ou à fréquenter le moins possible."
         )
         intro_fs, intro_lead = 9, 12.5
         ordre = ORDRE_DEFAV
 
-    intro_style = ParagraphStyle("Intro", fontName="Serif", fontSize=intro_fs, leading=intro_lead,
+    intro_style = ParagraphStyle("Intro", fontName="Sans", fontSize=intro_fs, leading=intro_lead,
                                  textColor=F.TEXT_DARK, alignment=TA_LEFT)
     intro_para = Paragraph(intro, intro_style)
     _, intro_h = intro_para.wrap(W - 144, 1000)
@@ -428,41 +437,42 @@ def _page_directions(c, ctx, page_no, favorable):
     _footer(c, ctx)
     c.showPage()
 
-def page5(c, ctx): _page_directions(c, ctx, 5, True)
-def page6(c, ctx): _page_directions(c, ctx, 6, False)
+def old_page_directions_fav(c, ctx): _page_directions(c, ctx, 5, True)   # hors lead magnet
+def old_page_directions_defav(c, ctx): _page_directions(c, ctx, 6, False)  # hors lead magnet
 
 # ============================================================
-#  PAGE 7 — Distinction emplacements / directions
+#  PAGE 5 / 7 — Distinction emplacements / directions
+#  (seule page, avec la 6, où le mot « directions » est autorisé)
 # ============================================================
-def page7(c, ctx):
-    _bg(c); _header(c, ctx, 7)
-    title_y = H - 100
-    c.setFillColor(F.TEXT_DARK); c.setFont("Serif", 21)
+def page_distinction(c, ctx):
+    _bg(c); _header(c, ctx, 5)
+    title_y = H - 96
+    c.setFillColor(F.TEXT_DARK); c.setFont("Serif", 24)
     c.drawCentredString(W/2, title_y, "Emplacements et directions")
     c.setStrokeColor(F.CORAL); c.setLineWidth(1.2); c.line(W/2 - 28, title_y - 11, W/2 + 28, title_y - 11)
-    c.setFont("SerifItalic", 11); c.setFillColor(F.TEXT_MUTED)
+    c.setFont("SerifItalic", 12); c.setFillColor(F.TEXT_MUTED)
     c.drawCentredString(W/2, title_y - 26, "La grande distinction à poser une fois pour toutes")
 
     intro = (
-        "Tu as maintenant vu tes emplacements (pages 3-4) et tes directions (pages 5-6). "
-        "Avant de passer à la pratique, faisons le point sur ce qui les différencie. "
-        "<font name='SerifBold'>Cette histoire d'emplacements et de directions perturbe beaucoup de gens</font> "
+        "Tu as maintenant vu tes 8 emplacements (pages 3-4). "
+        "Avant d'aller plus loin, faisons le point sur une distinction essentielle. "
+        "<font name='SansBold'>Cette histoire d'emplacements et de directions perturbe beaucoup de gens</font> "
         "— pour deux raisons : la plupart ne connaissent pas la distinction au départ, "
         "et même en la connaissant, on s'en emmêle facilement les pinceaux entre les deux. "
         "C'est pourtant crucial de bien comprendre les deux : ces notions sont "
-        "<font name='SerifBold'>complètement différentes et en même temps très complémentaires</font>."
+        "<font name='SansBold'>complètement différentes et en même temps très complémentaires</font>."
     )
-    intro_style = ParagraphStyle("Intro", fontName="Serif", fontSize=9.2, leading=12.8,
+    intro_style = ParagraphStyle("Intro", fontName="Sans", fontSize=8.8, leading=12.2,
                                  textColor=F.TEXT_DARK, alignment=TA_LEFT)
     intro_para = Paragraph(intro, intro_style)
     _, intro_h = intro_para.wrap(W - 144, 1000)
-    intro_y_top = title_y - 50; box_pad = 10; box_h = intro_h + 2*box_pad; box_y = intro_y_top - box_h
+    intro_y_top = title_y - 46; box_pad = 9; box_h = intro_h + 2*box_pad; box_y = intro_y_top - box_h
     c.setFillColor(F.CARD_BG); c.roundRect(60, box_y, W - 120, box_h, 6, fill=1, stroke=0)
     c.setFillColor(F.CORAL); c.rect(60, box_y, 3, box_h, fill=1, stroke=0)
     intro_para.drawOn(c, 72, box_y + box_pad)
 
-    table_y = box_y - 20; col_w = (W - 120 - 10)/2
-    lx = 60; rx = lx + col_w + 10; header_h = 30
+    table_y = box_y - 16; col_w = (W - 120 - 10)/2
+    lx = 60; rx = lx + col_w + 10; header_h = 28
     c.setFillColor(F.SAGE_DARK); c.roundRect(lx, table_y - header_h, col_w, header_h, 5, fill=1, stroke=0)
     c.setFillColor(F.CORAL_DARK); c.roundRect(rx, table_y - header_h, col_w, header_h, 5, fill=1, stroke=0)
     c.setFillColor(F.CREAM); c.setFont("SerifBold", 13)
@@ -479,8 +489,8 @@ def page7(c, ctx):
         ("À quoi ça sert", "Savoir comment <b>organiser</b> ta maison — où placer une pièce, une activité",
          "Savoir comment <b>orienter</b> tes meubles (lit, bureau, cuisinière...)"),
     ]
-    row_h = 50; row_y = table_y - header_h - 5
-    cell_style = ParagraphStyle("Cell", fontName="Serif", fontSize=9, leading=12.3,
+    row_h = 44; row_y = table_y - header_h - 5
+    cell_style = ParagraphStyle("Cell", fontName="Sans", fontSize=8.6, leading=11.6,
                                 textColor=F.TEXT_DARK, alignment=TA_LEFT)
     for label, vl, vr in lignes:
         c.setFillColor(F.CARD_BG); c.roundRect(lx, row_y - row_h, col_w, row_h, 4, fill=1, stroke=0)
@@ -494,7 +504,7 @@ def page7(c, ctx):
     table_bottom = row_y + 4
 
     # Pictogrammes
-    schema_y = table_bottom - 16; psize = 95; pgap = 60
+    schema_y = table_bottom - 10; psize = 78; pgap = 60
     plx = (W - (2*psize + pgap))/2
     house_x = plx; house_y = schema_y - psize; cs = psize/3
     c.setFillColor(F.CARD_BG); c.roundRect(house_x, house_y, psize, psize, 4, fill=1, stroke=0)
@@ -538,18 +548,18 @@ def page7(c, ctx):
     c.setFillColor(F.TEXT_DARK); c.setFont("SerifBold", 9); c.drawCentredString(ccx, house_y - 14, "« Je regarde vers »")
     c.setFont("SerifItalic", 8.5); c.setFillColor(F.TEXT_MUTED); c.drawCentredString(ccx, house_y - 26, "cette direction")
 
-    mnemo_y = house_y - 42
+    mnemo_y = house_y - 36
     mnemo = (
-        "<font name='SerifBold' size='11'>« Je suis »</font> "
+        "<font name='SansBold' size='11'>« Je suis »</font> "
         "<font name='Sans' size='9'>(emplacement)</font>  "
-        "<font name='SerifBold' size='11'>vs</font>  "
-        "<font name='SerifBold' size='11'>« Je regarde vers »</font> "
+        "<font name='SansBold' size='11'>vs</font>  "
+        "<font name='SansBold' size='11'>« Je regarde vers »</font> "
         "<font name='Sans' size='9'>(direction)</font><br/>"
-        "<font name='SerifItalic' size='8.5' color='#7A7568'>"
+        "<font name='SansItalic' size='8.5' color='#7A7568'>"
         "Exemple : Je suis dans mon bureau qui est en secteur Nord, "
         "et je regarde vers la direction Sud 2.</font>"
     )
-    mnemo_style = ParagraphStyle("Mnemo", fontName="Serif", fontSize=10, leading=14,
+    mnemo_style = ParagraphStyle("Mnemo", fontName="Sans", fontSize=10, leading=14,
                                  textColor=F.TEXT_DARK, alignment=TA_CENTER)
     mnemo_para = Paragraph(mnemo, mnemo_style)
     _, mnemo_h = mnemo_para.wrap(W - 144, 1000)
@@ -558,22 +568,117 @@ def page7(c, ctx):
     c.setFillColor(F.CORAL); c.rect(60, box_y, 3, box_h, fill=1, stroke=0)
     mnemo_para.drawOn(c, 70, box_y + box_pad)
 
+    # Texte de fin (validé) — pont vers la page 6
     final = (
-        "<font name='SerifItalic'>Tu te demandes maintenant comment trouver où sont "
-        "concrètement tes emplacements et tes directions dans <font name='SerifBold'>ta</font> maison ? "
-        "On y vient page 9 — c'est là que la pratique du Ba Zhai commence vraiment.</font>"
+        "Tu as maintenant ta carte : 8 emplacements, et une distinction essentielle entre "
+        "« où tu vis » et « où tu pointes ».<br/><br/>"
+        "Mais il reste une question — peut-être la plus concrète de toutes : "
+        "<font name='SansBold'>est-ce que ton lit, ton bureau, ta porte d'entrée, ta cuisinière "
+        "sont orientés vers une direction qui te porte… ou qui t'épuise ?</font><br/><br/>"
+        "Parce que tu peux être dans un excellent emplacement, mais avec la tête de lit qui "
+        "pointe vers une direction à -80 — et tout le bénéfice s'efface.<br/><br/>"
+        "C'est exactement là que la page suivante t'emmène."
     )
-    final_style = ParagraphStyle("Final", fontName="Serif", fontSize=9, leading=12.5,
-                                 textColor=F.TEXT_MUTED, alignment=TA_CENTER)
+    final_style = ParagraphStyle("Final", fontName="Sans", fontSize=8.8, leading=12.2,
+                                 textColor=F.TEXT_DARK, alignment=TA_LEFT)
     final_para = Paragraph(final, final_style)
-    _, final_h = final_para.wrap(W - 160, 1000)
-    final_para.drawOn(c, 80, (box_y - 14) - final_h)
+    _, final_h = final_para.wrap(W - 144, 1000)
+    final_para.drawOn(c, 72, (box_y - 12) - final_h)
 
     _footer(c, ctx)
     c.showPage()
 
 # ============================================================
-#  PAGE 8 — Ce que tu peux déjà regarder
+#  PAGE 6 / 7 — Et maintenant, chez toi ?  (teasing Offre 1)
+# ============================================================
+def page_offre(c, ctx):
+    _bg(c); _header(c, ctx, 6)
+    title_y = H - 96
+    c.setFillColor(F.TEXT_DARK); c.setFont("Serif", 24)
+    c.drawCentredString(W/2, title_y, "Et maintenant, chez toi ?")
+    c.setStrokeColor(F.CORAL); c.setLineWidth(1.2); c.line(W/2 - 28, title_y - 11, W/2 + 28, title_y - 11)
+    c.setFont("SerifItalic", 12); c.setFillColor(F.TEXT_MUTED)
+    c.drawCentredString(W/2, title_y - 26, "Ce que ton profil peut te révéler de concret")
+
+    body_style = ParagraphStyle("Body6", fontName="Sans", fontSize=9.5, leading=14,
+                                textColor=F.TEXT_DARK, alignment=TA_LEFT)
+
+    texte = (
+        "En ce moment, pendant que tu lis cette fiche, ton lit pointe dans une direction "
+        "précise. Ton bureau aussi. Ta porte d'entrée laisse entrer l'énergie depuis un "
+        "angle précis. Ta cuisinière oriente tes repas — et ton énergie — vers un cap que "
+        "tu n'as probablement jamais mesuré.<br/><br/>"
+        "Chacune de ces directions active l'un de tes 8 types de Qi. Et selon ton Ming Gua, "
+        "ce Qi peut être Sheng Qi (+90) — ton meilleur allié — ou Jue Ming (-90) — ton pire "
+        "frein. Souvent, c'est entre les deux. Mais la nuance change tout.<br/><br/>"
+        "Ce que tu as entre les mains aujourd'hui, c'est ta carte d'identité — le "
+        "<font name='SansItalic'>qui tu es</font> dans l'espace. C'est le socle.<br/><br/>"
+        "<font name='SansBold'>L'étape suivante, c'est la lecture de ce qui se passe chez toi "
+        "<font name='SansItalic'>maintenant</font>.</font>"
+    )
+    p = Paragraph(texte, body_style)
+    _, ph = p.wrap(W - 130, 1000)
+    text_top = title_y - 52
+    p.drawOn(c, 65, text_top - ph)
+
+    # --- Encart Offre 1 (nom verrouillé) ---
+    offre = (
+        "C'est ce que fait <font name='SansBold'><font name='SansItalic'>Ce que tes directions "
+        "disent de ta maison</font></font> — ton diagnostic personnalisé : tu me donnes 5 mesures "
+        "à la boussole (lit, bureau, porte, cuisinière, fauteuil), et tu reçois un rapport qui te "
+        "dit, pour chaque direction, quel Qi elle active pour toi — et quoi faire avec.<br/><br/>"
+        f"Pas de jargon. Pas de grille à interpréter tout{'e' if ctx.fe else ''} seul{ctx.fe}. "
+        "Une lecture faite pour toi, avec des recommandations concrètes et hiérarchisées."
+    )
+    offre_style = ParagraphStyle("Offre", fontName="Sans", fontSize=9.5, leading=14,
+                                 textColor=F.CREAM, alignment=TA_LEFT)
+    op = Paragraph(offre, offre_style)
+    _, oph = op.wrap(W - 154, 1000)
+    box_pad = 16
+    box_h = oph + 2 * box_pad
+    box_top = text_top - ph - 22
+    box_y = box_top - box_h
+    c.setFillColor(F.SAGE_DARK)
+    c.roundRect(60, box_y, W - 120, box_h, 10, fill=1, stroke=0)
+    op.drawOn(c, 77, box_y + box_pad)
+
+    # --- Bloc de clôture : placeholder de lancement OU bouton Offre 1 ---
+    cl_top = box_y - 24
+    if OFFRE1_DISPONIBLE and OFFRE1_URL:
+        btn_label = "Découvrir le diagnostic" + (f"  ·  {OFFRE1_PRIX}" if OFFRE1_PRIX else "")
+        c.setFont("SansBold", 11)
+        bw = c.stringWidth(btn_label, "SansBold", 11) + 44
+        bx = (W - bw) / 2; bh = 32; by = cl_top - bh
+        c.setFillColor(F.CORAL); c.roundRect(bx, by, bw, bh, 16, fill=1, stroke=0)
+        c.setFillColor(F.CREAM); c.drawCentredString(W/2, by + 11, btn_label)
+        c.linkURL(OFFRE1_URL, (bx, by, bx + bw, by + bh), relative=0)
+        after_y = by - 22
+    else:
+        c.setFont("SerifItalic", 11.5); c.setFillColor(F.TEXT_DARK)
+        c.drawCentredString(W/2, cl_top - 12,
+                            "Le diagnostic sera disponible très prochainement.")
+        premiere = "la première informée" if ctx.fe else "le premier informé"
+        c.drawCentredString(W/2, cl_top - 28, f"Tu seras {premiere} par email.")
+        after_y = cl_top - 52
+
+    invite = (
+        "En attendant, si cette fiche t'a fait voir ta maison un peu différemment — ou si elle "
+        "a soulevé une question —, <font name='SansBold'>réponds à ce mail</font>. "
+        "Je lis tout, je réponds."
+    )
+    inv_p = Paragraph(invite, body_style)
+    iw, ih = inv_p.wrap(W - 130, 1000)
+    inv_p.drawOn(c, 65, after_y - ih)
+    c.linkURL(URL_MAIL, (65, after_y - ih - 2, 65 + iw, after_y + 2), relative=0)
+
+    c.setFont("SerifItalic", 12); c.setFillColor(F.CORAL)
+    c.drawRightString(W - 65, after_y - ih - 26, "Aurélie")
+
+    _footer(c, ctx)
+    c.showPage()
+
+# ============================================================
+#  (ancienne page 8 — retirée du lead magnet, conservée pour l'Offre 1)
 # ============================================================
 def _draw_lit(c, x, y, w, h):
     cx = x + w/2; cy = y + h/2
@@ -614,7 +719,7 @@ def _draw_bureau(c, x, y, w, h):
         c.line(mcx + mr*math.sin(a), mcy + mr*math.cos(a), mcx + (mr-2)*math.sin(a), mcy + (mr-2)*math.cos(a))
     c.setFillColor(F.SAGE_DARK); c.setFont("SansBold", 5.5); c.drawCentredString(mcx, mcy + mr + 2.5, "N")
 
-def page8(c, ctx):
+def old_page_regarder(c, ctx):  # hors lead magnet (contenu Offre 1)
     _bg(c); _header(c, ctx, 8)
     title_y = H - 100
     c.setFillColor(F.TEXT_DARK); c.setFont("Serif", 21)
@@ -622,14 +727,14 @@ def page8(c, ctx):
     c.setStrokeColor(F.CORAL); c.setLineWidth(1.2); c.line(W/2 - 28, title_y - 11, W/2 + 28, title_y - 11)
 
     chapeau = (
-        "<font name='SerifItalic'>En Ba Zhai, il y a beaucoup de combinaisons possibles entre "
+        "<font name='SansItalic'>En Ba Zhai, il y a beaucoup de combinaisons possibles entre "
         "emplacements et directions, et tout un ordre de priorité dans la lecture. "
         "C'est ce qu'on explore quand on va plus loin.<br/><br/>"
         "Mais déjà, avec ce que tu as entre les mains — ton Ming Gua et tes directions — "
-        "il y a <font name='SerifBold'>deux choses très concrètes</font> que tu peux observer chez toi "
+        "il y a <font name='SansBold'>deux choses très concrètes</font> que tu peux observer chez toi "
         "dès maintenant.</font>"
     )
-    chapeau_style = ParagraphStyle("Chapeau", fontName="Serif", fontSize=9.2, leading=13,
+    chapeau_style = ParagraphStyle("Chapeau", fontName="Sans", fontSize=9.2, leading=13,
                                    textColor=F.TEXT_DARK, alignment=TA_LEFT)
     chapeau_para = Paragraph(chapeau, chapeau_style)
     _, chapeau_h = chapeau_para.wrap(W - 144, 1000)
@@ -644,7 +749,7 @@ def page8(c, ctx):
          "soustitre": "vers où pointe le haut de ta tête de lit — milieu de la tête de lit",
          "texte": (f"Quand tu es allongé{fe} dans ton lit, vers quelle direction pointe le haut de "
                    "ta tête ? On prend la mesure au milieu de la tête de lit. "
-                   "Cette direction active <font name='SerifBold'>un des 8 types de Qi</font> "
+                   "Cette direction active <font name='SansBold'>un des 8 types de Qi</font> "
                    "pour toi — l'un de tes quatre favorables (Sheng Qi, Tian Yi, Yan Nian, Fu Wei) "
                    "ou l'un de tes quatre défavorables (Huo Hai, Wu Gui, Liu Sha, Jue Ming)."),
          "schema": "lit"},
@@ -656,12 +761,12 @@ def page8(c, ctx):
                    "Et ça vaut pour tout endroit où tu passes des heures dans une orientation "
                    "stable : ton bureau chez toi, ton poste au travail, le fauteuil où tu lis "
                    "tous les soirs... À chaque fois, c'est la direction que tu "
-                   "<font name='SerifBold'>occupes</font> pendant ces longues heures qui compte. "
+                   "<font name='SansBold'>occupes</font> pendant ces longues heures qui compte. "
                    "Même logique : un des 8 Qi se met en mouvement pendant tout ce temps."),
          "schema": "bureau"},
     ]
     cartes_y_top = box_y - 16; carte_x = 60; carte_w = W - 120; carte_gap = 8
-    texte_style = ParagraphStyle("Texte", fontName="Serif", fontSize=9, leading=12.8,
+    texte_style = ParagraphStyle("Texte", fontName="Sans", fontSize=9, leading=12.8,
                                  textColor=F.TEXT_DARK, alignment=TA_LEFT)
     current_y = cartes_y_top
     for carte in cartes:
@@ -687,10 +792,10 @@ def page8(c, ctx):
     c.setStrokeColor(F.SAGE_70); c.setLineWidth(0.7); c.line(W/2 - 50, concl_y, W/2 + 50, concl_y)
     concl_y -= 12
     conclusion = (
-        "Ces deux directions, tu peux les vérifier <font name='SerifBold'>dès maintenant</font>. "
+        "Ces deux directions, tu peux les vérifier <font name='SansBold'>dès maintenant</font>. "
         "Et souvent, ça suffit déjà à éclairer des choses — pourquoi tel sommeil, pourquoi telle "
         "ambiance dans tes heures concentrées, pourquoi ça avance ou pas.<br/><br/>"
-        "<font name='SerifItalic'>Mais c'est vraiment le début du chemin. En Ba Zhai, il y a bien "
+        "<font name='SansItalic'>Mais c'est vraiment le début du chemin. En Ba Zhai, il y a bien "
         "plus à lire : dans quel secteur de ta maison se trouve ta chambre, ton entrée, ta cuisine "
         "— ce qui demande de poser la grille Ba Zhai sur ton plan. Comment les énergies se "
         "répartissent pièce par pièce. Ce qui se joue pour chacun des membres de la famille. "
@@ -698,10 +803,10 @@ def page8(c, ctx):
         "C'est ce parcours-là que je suis en train de préparer pour toi, et je t'en reparlerai "
         "très bientôt.<br/><br/>"
         "En attendant, si tu veux qu'on garde le fil ensemble, "
-        "<font name='SerifBold'>réponds à ce mail</font> : raconte-moi ce que tu as découvert en "
+        "<font name='SansBold'>réponds à ce mail</font> : raconte-moi ce que tu as découvert en "
         "lisant ta fiche, ou pose-moi la question qui te trotte dans la tête. Je lis tout, je réponds."
     )
-    concl_style = ParagraphStyle("Concl", fontName="Serif", fontSize=9, leading=12.8,
+    concl_style = ParagraphStyle("Concl", fontName="Sans", fontSize=9, leading=12.8,
                                  textColor=F.TEXT_DARK, alignment=TA_LEFT)
     concl_para = Paragraph(conclusion, concl_style)
     cw, ch = concl_para.wrap(W - 130, 1000)
@@ -715,8 +820,8 @@ def page8(c, ctx):
 # ============================================================
 #  PAGE 9 — Qui suis-je
 # ============================================================
-def page9(c, ctx):
-    _bg(c); _header(c, ctx, 9)
+def page_bio(c, ctx):
+    _bg(c); _header(c, ctx, 7)
     photo_size = 105; photo_x = 60; photo_y_top = H - 100; photo_y = photo_y_top - photo_size
     if F.PHOTO_PATH:
         try:
@@ -730,7 +835,7 @@ def page9(c, ctx):
     c.setFillColor(F.TEXT_MUTED); c.setFont("SerifItalic", 11); c.drawString(text_x, text_top, "Qui suis-je")
     c.setStrokeColor(F.CORAL); c.setLineWidth(1.2); c.line(text_x, text_top - 7, text_x + 26, text_top - 7)
     c.setFillColor(F.SAGE_DARK); c.setFont("Serif", 36); c.drawString(text_x, text_top - 48, "Aurélie")
-    tagline = ("<font name='SerifItalic' color='#5F6C50'>Tisseuse d'harmonies<br/>"
+    tagline = ("<font name='SansItalic' color='#5F6C50'>Tisseuse d'harmonies<br/>"
                "feng shui traditionnel &amp; accompagnement par l'habitat</font>")
     tagline_style = ParagraphStyle("Tagline", fontName="SerifItalic", fontSize=10.5, leading=14,
                                    textColor=F.SAGE_DARK, alignment=TA_LEFT)
@@ -744,7 +849,7 @@ def page9(c, ctx):
         "feng shui new age, thérapies… J'ai essayé beaucoup de choses avant d'arriver "
         "là où je suis aujourd'hui. Et ce qui ne marchait pas, je l'ai compris après : "
         "c'était trop superficiel, trop décoratif, trop « astuces ».<br/><br/>"
-        "En 2015, à bout, j'ai croisé la route du <font name='SerifBold'>feng shui "
+        "En 2015, à bout, j'ai croisé la route du <font name='SansBold'>feng shui "
         "traditionnel chinois</font> — celui d'avant l'occidentalisation, celui qui lit "
         "la maison avec ses montagnes, ses orientations, ses énergies, ses temps. "
         "Ça a été le coup de cœur immédiat. Une cohérence enfin. Quelque chose qui se tient.<br/><br/>"
@@ -754,10 +859,10 @@ def page9(c, ctx):
         "habitation. Pas par magie : par lecture juste, par actions ciblées, par alignement "
         "entre ce que la maison disait et ce qu'elles traversaient.<br/><br/>"
         "Aujourd'hui je transmets. Pas en oracle qui aurait toutes les réponses — "
-        "en <font name='SerifBold'>tisseuse qui aide à relier les fils</font>. "
+        "en <font name='SansBold'>tisseuse qui aide à relier les fils</font>. "
         "Parce qu'au fond, ta maison te parle déjà. Mon métier, c'est de t'aider à l'écouter."
     )
-    recit_style = ParagraphStyle("Recit", fontName="Serif", fontSize=10, leading=14,
+    recit_style = ParagraphStyle("Recit", fontName="Sans", fontSize=10, leading=14,
                                  textColor=F.TEXT_DARK, alignment=TA_LEFT)
     recit_para = Paragraph(recit, recit_style)
     _, recit_h = recit_para.wrap(W - 120, 1000)
@@ -769,10 +874,10 @@ def page9(c, ctx):
         "<font name='SansBold' color='#7A8B6D' size='7.5'>MA FAÇON DE TRAVAILLER</font><br/><br/>"
         "Je travaille en feng shui traditionnel chinois — sans bagua occidental, sans "
         "« secteur amour », sans astuces déco. Et j'allie cette lecture à un accompagnement "
-        "de la personne qui habite : <font name='SerifBold'>parce que la maison ouvre des "
+        "de la personne qui habite : <font name='SansBold'>parce que la maison ouvre des "
         "portes, mais c'est toi qui les franchis</font>."
     )
-    carte_style = ParagraphStyle("Carte", fontName="Serif", fontSize=9.5, leading=13.5,
+    carte_style = ParagraphStyle("Carte", fontName="Sans", fontSize=9.5, leading=13.5,
                                  textColor=F.TEXT_DARK, alignment=TA_LEFT)
     carte_para = Paragraph(carte, carte_style)
     _, carte_h = carte_para.wrap(W - 140, 1000)
@@ -797,9 +902,9 @@ def page9(c, ctx):
     puce(px, py - lh, "Pinterest", "@lestisseusesdharmonies", URL_PINTEREST)
     puce(px, py - 2*lh, "Site", "lestisseusesdharmonies.fr (en cours de refonte)", URL_SITE)
     rappel_y = py - 2*lh - 24
-    rappel = ("<font name='SerifItalic'>Et n'oublie pas : tu peux toujours "
-              "<font name='SerifBold'>répondre à ce mail</font>. Je lis tout, je réponds.</font>")
-    rappel_style = ParagraphStyle("Rappel", fontName="Serif", fontSize=9.5, leading=13,
+    rappel = ("<font name='SansItalic'>Et n'oublie pas : tu peux toujours "
+              "<font name='SansBold'>répondre à ce mail</font>. Je lis tout, je réponds.</font>")
+    rappel_style = ParagraphStyle("Rappel", fontName="Sans", fontSize=9.5, leading=13,
                                   textColor=F.TEXT_DARK, alignment=TA_LEFT)
     rappel_para = Paragraph(rappel, rappel_style)
     rw, rh = rappel_para.wrap(W - 130, 1000)
@@ -812,7 +917,10 @@ def page9(c, ctx):
 # ============================================================
 #  Orchestration
 # ============================================================
-_PAGES = (page1, page2, page3, page4, page5, page6, page7, page8, page9)
+# Lead magnet = 7 pages. Les anciennes pages « directions » (24 montagnes) et
+# « ce que tu peux déjà regarder » sont retirées du PDF gratuit (contenu Offre 1) ;
+# leurs fonctions restent dans le fichier pour réutilisation future.
+_PAGES = (page1, page2, page3, page4, page_distinction, page_offre, page_bio)
 
 def _render(target, gua, prenom, naissance, sexe):
     F.register_fonts()

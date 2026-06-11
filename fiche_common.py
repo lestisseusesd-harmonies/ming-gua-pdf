@@ -13,20 +13,22 @@ from PIL import Image, ImageDraw, ImageFont
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 
-# ---------- Palette (identique aux maquettes) ----------
-BEIGE_BG   = HexColor("#EFE8D9")
-CARD_BG    = HexColor("#FAF6EC")
-CREAM      = HexColor("#EFE8D9")
-SAGE_DARK  = HexColor("#5F6C50")
-SAGE_LIGHT = HexColor("#9BAA8D")
-SAGE_90    = HexColor("#4A553F")
-SAGE_80    = HexColor("#5F6C50")
-SAGE_70    = HexColor("#7A8B6D")
-SAGE_60    = HexColor("#9BAA8D")
-CORAL      = HexColor("#E87A6A")
-CORAL_DARK = HexColor("#C8513E")
-TEXT_DARK  = HexColor("#3D3D3D")
-TEXT_MUTED = HexColor("#7A7568")
+# ---------- Palette (charte Claude Design / Noriane Mesli — source unique) ----------
+# Crème #F2EBE0 · Sauge #8BBAB4 · Olive foncé #4B4D3C · Corail #E5614A · Texte #2A2926
+BEIGE_BG   = HexColor("#F2EBE0")   # crème (fond)
+CARD_BG    = HexColor("#FAF6EF")   # carte = crème éclairci
+CREAM      = HexColor("#F2EBE0")
+SAGE_DARK  = HexColor("#4B4D3C")   # olive foncé
+SAGE_LIGHT = HexColor("#8BBAB4")   # vert sauge
+# Échelle d'intensité des Qi favorables : du plus dense (olive) au plus léger (sauge)
+SAGE_90    = HexColor("#4B4D3C")   # olive foncé
+SAGE_80    = HexColor("#5F6E5F")   # mélange olive→sauge
+SAGE_70    = HexColor("#74948B")   # mélange olive→sauge
+SAGE_60    = HexColor("#8BBAB4")   # sauge
+CORAL      = HexColor("#E5614A")   # corail (charte)
+CORAL_DARK = HexColor("#B84A37")   # corail assombri (défavorables -80/-90)
+TEXT_DARK  = HexColor("#2A2926")
+TEXT_MUTED = HexColor("#6E6A60")   # texte atténué (dérivé du texte foncé)
 
 # ---------- Résolution de chemins multi-environnement ----------
 def _first_existing(paths):
@@ -35,17 +37,26 @@ def _first_existing(paths):
             return p
     return None
 
+# Charte : titres = Cormorant Garamond, corps/UI = Jost. DejaVu = secours.
 _FONT_CANDIDATES = {
-    "Serif":       [os.path.join(BASE, "fonts/DejaVuSerif.ttf"),
+    "Serif":       [os.path.join(BASE, "fonts/CormorantGaramond-Regular.ttf"),
+                    os.path.join(BASE, "fonts/DejaVuSerif.ttf"),
                     "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf"],
-    "SerifItalic": [os.path.join(BASE, "fonts/DejaVuSerif-Italic.ttf"),
+    "SerifItalic": [os.path.join(BASE, "fonts/CormorantGaramond-Italic.ttf"),
+                    os.path.join(BASE, "fonts/DejaVuSerif-Italic.ttf"),
                     "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Italic.ttf"],
-    "SerifBold":   [os.path.join(BASE, "fonts/DejaVuSerif-Bold.ttf"),
+    "SerifBold":   [os.path.join(BASE, "fonts/CormorantGaramond-SemiBold.ttf"),
+                    os.path.join(BASE, "fonts/DejaVuSerif-Bold.ttf"),
                     "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf"],
-    "Sans":        [os.path.join(BASE, "fonts/DejaVuSans.ttf"),
+    "Sans":        [os.path.join(BASE, "fonts/Jost-Regular.ttf"),
+                    os.path.join(BASE, "fonts/DejaVuSans.ttf"),
                     "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"],
-    "SansBold":    [os.path.join(BASE, "fonts/DejaVuSans-Bold.ttf"),
+    "SansBold":    [os.path.join(BASE, "fonts/Jost-SemiBold.ttf"),
+                    os.path.join(BASE, "fonts/DejaVuSans-Bold.ttf"),
                     "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"],
+    "SansItalic":  [os.path.join(BASE, "fonts/Jost-Italic.ttf"),
+                    os.path.join(BASE, "fonts/DejaVuSans.ttf"),
+                    "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"],
 }
 
 # Police CJK pour PIL : (chemin, index dans la collection)
@@ -69,6 +80,11 @@ def register_fonts():
         if not path:
             raise RuntimeError(f"Police introuvable pour {name} : {candidates}")
         pdfmetrics.registerFont(TTFont(name, path))
+    # Familles pour que <b>/<i> fonctionnent dans les Paragraph
+    pdfmetrics.registerFontFamily("Sans", normal="Sans", bold="SansBold",
+                                  italic="SansItalic", boldItalic="SansBold")
+    pdfmetrics.registerFontFamily("Serif", normal="Serif", bold="SerifBold",
+                                  italic="SerifItalic", boldItalic="SerifBold")
     _fonts_registered = True
 
 def _cjk_font_spec():
@@ -114,11 +130,12 @@ def load_guas():       return _load("guas.json")
 def load_qi():         return _load("qi.json")
 def load_trigrammes(): return _load("trigrammes.json")
 
-# Conversion markup web -> markup reportlab
+# Conversion markup web -> markup reportlab.
+# Corps de texte = Jost (charte) : le gras/italique inline suit la police du corps.
 def to_rl_markup(html):
-    return (html.replace("<strong>", "<font name='SerifBold'>")
+    return (html.replace("<strong>", "<font name='SansBold'>")
                 .replace("</strong>", "</font>")
-                .replace("<em>", "<font name='SerifItalic'>")
+                .replace("<em>", "<font name='SansItalic'>")
                 .replace("</em>", "</font>"))
 
 # Score -> couleur de badge
