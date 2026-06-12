@@ -178,7 +178,7 @@ def page1(c, ctx):
 def page2(c, ctx):
     _bg(c); _header(c, ctx, 2)
     title_y = H - 105
-    _title(c, title_y, f"Le trigramme {ctx.gua_nom}", "Qui tu es selon le feng shui traditionnel")
+    _title(c, title_y, f"Le trigramme {ctx.gua_nom}", "Ce que ton trigramme évoque")
 
     note = (
         "<font name='SansBold'>Avant d'aller plus loin, un point important.</font> "
