@@ -137,7 +137,26 @@ def to_rl_markup(html):
                 .replace("<em>", "<font name='SansItalic'>")
                 .replace("</em>", "</font>"))
 
-# Score -> couleur de badge
+# Score -> couleur de badge (usage générique)
 def score_color(score):
     return {90: SAGE_90, 80: SAGE_80, 70: SAGE_70, 60: SAGE_60}.get(
         score, CORAL if score >= -70 else CORAL_DARK)
+
+# --- Rampes d'intensité pour les pastilles Qi (pages 3-4 du PDF) ---
+# Aide visuelle : plus l'énergie est forte en valeur absolue, plus la pastille est foncée.
+# Ancres = couleurs exactes de la charte (olive, olive-clair, corail, corail-hover),
+# nuances extrêmes obtenues par éclaircissement/assombrissement de ces ancres.
+QI_FAV = {   # olive, du plus clair (+60) au plus foncé (+90)
+    60: HexColor("#8C8D74"),   # olive clair
+    70: HexColor("#6E7058"),
+    80: HexColor("#5C5E4A"),   # --olive-clair
+    90: HexColor("#4B4D3C"),   # --olive
+}
+QI_DEFAV = {  # corail/rouge, du plus clair (-60) au plus foncé (-90)
+    -60: HexColor("#EE8C7A"),  # corail clair
+    -70: HexColor("#E5614A"),  # --corail
+    -80: HexColor("#D04F3A"),  # --corail-hover
+    -90: HexColor("#A93A28"),  # corail foncé
+}
+def qi_badge_color(score):
+    return QI_FAV.get(score) or QI_DEFAV.get(score) or SAGE_DARK

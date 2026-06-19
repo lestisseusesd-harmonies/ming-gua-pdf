@@ -145,14 +145,14 @@ def page1(c, ctx):
     accueil = (
         f"<font name='SansBold'>Bonjour {ctx.prenom},</font><br/><br/>"
         "Tu tiens entre les mains quelque chose de rare : ta carte d'identité énergétique "
-        "dans l'espace. En feng shui traditionnel chinois, ça s'appelle le Ming Gua, "
+        "dans l'espace. En Feng Shui traditionnel chinois, ça s'appelle le Ming Gua, "
         "et c'est le socle de tout.<br/><br/>"
         "C'est lui qui détermine où ton corps trouve de l'appui dans ta maison, et où il "
         "s'épuise. Pas une théorie : une grille de lecture millénaire, calculée à partir "
         "de ta date de naissance.<br/><br/>"
         "Dans cette fiche, tu vas découvrir tes 8 emplacements : les 4 qui te portent et "
         "les 4 qui t'épuisent. Prends le temps de la lire tranquillement. "
-        "Le feng shui ne se survole pas, il se laisse infuser."
+        "Le Feng Shui ne se survole pas, il se laisse infuser."
     )
     style = ParagraphStyle("Accueil", fontName="Sans", fontSize=10.5, leading=15.5,
                            textColor=F.TEXT_DARK, alignment=TA_LEFT)
@@ -186,7 +186,7 @@ def page2(c, ctx):
         "Ce n'est pas un test de personnalité qui te dit \"tu es comme ça\". "
         "C'est une clef de lecture issue de la pensée chinoise classique, "
         "riche de correspondances symboliques avec la nature, les éléments, les saisons.<br/><br/>"
-        "Concrètement, en <b>BaZhai</b> (la branche du feng shui qu'on travaille ici), "
+        "Concrètement, en <b>BaZhai</b> (la branche du Feng Shui qu'on travaille ici), "
         "c'est surtout ton numéro Gua qui sert : il détermine tes 8 emplacements. "
         "Le reste (l'élément qui t'est associé, le profil évoqué plus bas) "
         "vient d'un système de correspondances plus large issu du <i>Yi Jing</i>. À utiliser avec souplesse.<br/><br/>"
@@ -287,7 +287,7 @@ def _page_emplacements(c, ctx, page_no, favorable):
     for score in scores:
         qi = ctx.qi_by_score(score)
         direction = ctx.empl_dir(score)
-        badge_col = F.SAGE_DARK if favorable else F.score_color(score)
+        badge_col = F.qi_badge_color(score)   # rampe d'intensité (clair -> foncé)
 
         desc = Paragraph(F.to_rl_markup(qi["description"]), desc_style)
         _, dh = desc.wrap(cw, 1000)
@@ -374,10 +374,10 @@ def _page_directions(c, ctx, page_no, favorable):
         intro = (
             "Tu entres maintenant dans la partie la plus précise — "
             "et probablement la plus précieuse — de cette fiche.<br/><br/>"
-            "Le feng shui qu'on rencontre couramment dans les magazines et les blogs "
+            "Le Feng Shui qu'on rencontre couramment dans les magazines et les blogs "
             "propose souvent des recettes du type « mets ta cuisine au Sud-Est, ta chambre au Nord ». "
             "<font name='SansBold'>Ces recettes sont fausses</font> : elles viennent d'un bagua "
-            "occidental qui n'a rien à voir avec le feng shui traditionnel — où c'est ton Ming Gua "
+            "occidental qui n'a rien à voir avec le Feng Shui traditionnel — où c'est ton Ming Gua "
             "qui détermine <font name='SansBold'>tes</font> emplacements favorables, pas une grille universelle.<br/><br/>"
             "Et même avec les emplacements bien travaillés, il reste une dimension qu'il ne faut "
             "surtout pas oublier : <font name='SansBold'>les directions</font>. "
@@ -834,7 +834,7 @@ def page_bio(c, ctx):
     c.setStrokeColor(F.CORAL); c.setLineWidth(1.2); c.line(text_x, text_top - 7, text_x + 26, text_top - 7)
     c.setFillColor(F.SAGE_DARK); c.setFont("Serif", 36); c.drawString(text_x, text_top - 48, "Aurélie")
     tagline = ("<font name='SansItalic' color='#5F6C50'>Tisseuse d'harmonies<br/>"
-               "feng shui traditionnel &amp; accompagnement par l'habitat</font>")
+               "Feng Shui traditionnel &amp; accompagnement par l'habitat</font>")
     tagline_style = ParagraphStyle("Tagline", fontName="SerifItalic", fontSize=10.5, leading=14,
                                    textColor=F.SAGE_DARK, alignment=TA_LEFT)
     tagline_para = Paragraph(tagline, tagline_style)
@@ -844,10 +844,10 @@ def page_bio(c, ctx):
 
     recit = (
         "J'ai cherché longtemps. Méthodes énergétiques, développement personnel, "
-        "feng shui new age, thérapies… J'ai essayé beaucoup de choses avant d'arriver "
+        "Feng Shui new age, thérapies… J'ai essayé beaucoup de choses avant d'arriver "
         "là où je suis aujourd'hui. Et ce qui ne marchait pas, je l'ai compris après : "
         "c'était trop superficiel, trop décoratif, trop « astuces ».<br/><br/>"
-        "En 2015, à bout, j'ai croisé la route du <font name='SansBold'>feng shui "
+        "En 2015, à bout, j'ai croisé la route du <font name='SansBold'>Feng Shui "
         "traditionnel chinois</font> : celui d'avant l'occidentalisation, celui qui lit "
         "la maison avec ses montagnes, ses orientations, ses énergies, ses temps. "
         "Ça a été le coup de cœur immédiat. Une cohérence enfin. Quelque chose qui se tient.<br/><br/>"
@@ -870,7 +870,7 @@ def page_bio(c, ctx):
     carte_y_top = recit_bot - 16
     carte = (
         "<font name='SansBold' color='#7A8B6D' size='7.5'>MA FAÇON DE TRAVAILLER</font><br/><br/>"
-        "Je travaille en feng shui traditionnel chinois : sans bagua occidental, sans "
+        "Je travaille en Feng Shui traditionnel chinois : sans bagua occidental, sans "
         "« secteur amour », sans astuces déco. Et j'allie cette lecture à un accompagnement "
         "de la personne qui habite : <font name='SansBold'>parce que la maison ouvre des "
         "portes, mais c'est toi qui les franchis</font>."
